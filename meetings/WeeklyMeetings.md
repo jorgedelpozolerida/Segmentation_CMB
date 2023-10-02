@@ -2,7 +2,7 @@
 # Jorge's Weekly Meeting Notes
 
 * [9 October 2023](#date-9-october-2023)
-* [13 October 2023](#date-13-october-2023)
+<!-- * [13 October 2023](#date-13-october-2023)
 * [16 October 2023](#date-16-october-2023)
 * [20 October 2023](#date-20-october-2023)
 * [23 October 2023](#date-23-october-2023)
@@ -20,8 +20,8 @@
 * [4 December 2023](#date-4-december-2023)
 * [8 December 2023](#date-8-december-2023)
 * [11 December 2023](#date-11-december-2023)
-* [15 December 2023](#date-15-december-2023)
-* [Template](#template-date-dd-month-yyyy)
+* [15 December 2023](#date-15-december-2023) -->
+* [Template](#date-template)
 
 <br><br><br><br><br>
 <br><br><br><br><br>
