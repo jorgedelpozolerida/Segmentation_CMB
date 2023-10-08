@@ -108,6 +108,13 @@ This space is yours to add to as needed.
     - Then review papers for MEDICAL imaging segmentation
     - Then review papers for medical imaging segmentation with DL/automated methods
     - Then research/review papers for segmentation of CMB specifically
+* Future TODOs:
+    - Narrow down better to literature search to CMB segmentation only, filling a table with different approaches so far and metadata about them
+    - Given low number of labeled data:
+        - Implement basic data augmentations
+        - Given small size of target, implement adapted patch sampling strategy 
+
+  
 
 <br><br><br><br><br>
 
