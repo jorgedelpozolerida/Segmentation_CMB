@@ -2,11 +2,12 @@
 # Jorge's Weekly Meeting Notes
 
 * [9 October 2023](#date-9-october-2023)
+* [27 October 2023](#date-27-october-2023)
+
 <!-- * [13 October 2023](#date-13-october-2023)
 * [16 October 2023](#date-16-october-2023)
 * [20 October 2023](#date-20-october-2023)
 * [23 October 2023](#date-23-october-2023)
-* [27 October 2023](#date-27-october-2023)
 * [30 October 2023](#date-30-october-2023)
 * [3 November 2023](#date-3-november-2023)
 * [6 November 2023](#date-6-november-2023)
@@ -39,7 +40,7 @@ Replace this text with a one/two sentence description of who you helped this wee
 
 Replace this text with a one/two sentence description of what helped you this week and how.
 
-#### What did you achieve?
+#### What did you achieve/do?
 
 * Replace this text with a bullet point list of what you achieved this week.
 * It's ok if your list is only one bullet point long!
@@ -72,7 +73,7 @@ This space is yours to add to as needed.
 ### Date: 9 October 2023
 
 
-#### What did you achieve?
+#### What did you achieve/do?
 * familiarized with ClearML (MLOps infrastructure) and how to code in it: performed some basic experiment with brats19 dataset
 * analyzed VALDO dataset images. Found some issues and a lot of preprocessing needed. See metadata: [VALDO_new_metadata.csv](../data/VALDO_new_metadata.csv) 
 * Created structure for saving info from literature review into a DB in Notion
@@ -124,7 +125,7 @@ This space is yours to add to as needed.
 
 
 
-#### What did you achieve?
+#### What did you achieve/do?
 * n/a
 
 #### What did you struggle with?
@@ -148,7 +149,7 @@ This space is yours to add to as needed.
 
 
 
-#### What did you achieve?
+#### What did you achieve/do?
 * n/a
 
 #### What did you struggle with?
@@ -172,7 +173,7 @@ This space is yours to add to as needed.
 
 
 
-#### What did you achieve?
+#### What did you achieve/do?
 * n/a
 
 #### What did you struggle with?
@@ -196,7 +197,7 @@ This space is yours to add to as needed.
 
 
 
-#### What did you achieve?
+#### What did you achieve/do?
 * n/a
 
 #### What did you struggle with?
@@ -220,21 +221,46 @@ This space is yours to add to as needed.
 
 
 
-#### What did you achieve?
-* n/a
+#### What did you achieve/do?
+* Coordinate annotation of microbleeds for MSc thesis (IN PROGRESS):
+    - Identify from internal data which have potentially microbleeds: ~70
+    - Start planning how to set up annotation environment on Redbrick platform for Silvia Ingala to annotate
+
+* Preprocessing of VALDO dataset (IN PROGRESS)
+
+    0. Quality Control of rawdata
+        - handle Nans
+        - mask preparation: binarize to same values masks
+    1. Skull Stripping 
+    2. Crop (using brain mask)
+    3. Bias field correction?
+    4. Resampling and standarizing dimensions -> isotropic
+    5. Intensity normalization
+    6. Stack up data together (multi-sequence input)
+
 
 #### What did you struggle with?
-* n/a
+* preprocessing
 
 #### What would you like to work on next ?
-* n/a
+1. Finish preprocessing
+2. Literature research on methods for CMB segmentation
+3. Implement U-Net
 
 #### Where do you need help from Veronika?
-* n/a
+* Is there a standarized way of preprocessing data before feeding to CNN? Specially with regard to order of steps applied...
 
 #### Others
 
-* n/a
+* Talked with SAP about dates for presentation, they ensured presnetation would take place before 19th January.
+* For the microbleeds to be annotated for my MSc thesis, I will have:
+    - sequence and study level metadata about: 
+        - presence/absence of various tumor/hemorrhages/infarcts
+        - image quality
+    - radiological reports
+    - scanner parameters
+* Of the ~70 potential microbleeds cases, these contains very likely some other kind of pathology
+(Tumor, Hemorrhage, Infarct; of various types)
 
 <br><br><br><br><br>
 
@@ -244,7 +270,7 @@ This space is yours to add to as needed.
 
 
 
-#### What did you achieve?
+#### What did you achieve/do?
 * n/a
 
 #### What did you struggle with?
@@ -267,7 +293,7 @@ This space is yours to add to as needed.
 
 
 
-#### What did you achieve?
+#### What did you achieve/do?
 * n/a
 
 #### What did you struggle with?
@@ -291,7 +317,7 @@ This space is yours to add to as needed.
 
 
 
-#### What did you achieve?
+#### What did you achieve/do?
 * n/a
 
 #### What did you struggle with?
@@ -315,7 +341,7 @@ This space is yours to add to as needed.
 
 
 
-#### What did you achieve?
+#### What did you achieve/do?
 * n/a
 
 #### What did you struggle with?
@@ -339,7 +365,7 @@ This space is yours to add to as needed.
 
 
 
-#### What did you achieve?
+#### What did you achieve/do?
 * n/a
 
 #### What did you struggle with?
@@ -363,7 +389,7 @@ This space is yours to add to as needed.
 
 
 
-#### What did you achieve?
+#### What did you achieve/do?
 * n/a
 
 #### What did you struggle with?
@@ -387,7 +413,7 @@ This space is yours to add to as needed.
 
 
 
-#### What did you achieve?
+#### What did you achieve/do?
 * n/a
 
 #### What did you struggle with?
@@ -413,7 +439,7 @@ This space is yours to add to as needed.
 
 
 
-#### What did you achieve?
+#### What did you achieve/do?
 * n/a
 
 #### What did you struggle with?
@@ -437,7 +463,7 @@ This space is yours to add to as needed.
 
 
 
-#### What did you achieve?
+#### What did you achieve/do?
 * n/a
 
 #### What did you struggle with?
@@ -461,7 +487,7 @@ This space is yours to add to as needed.
 
 
 
-#### What did you achieve?
+#### What did you achieve/do?
 * n/a
 
 #### What did you struggle with?
@@ -485,7 +511,7 @@ This space is yours to add to as needed.
 
 
 
-#### What did you achieve?
+#### What did you achieve/do?
 * n/a
 
 #### What did you struggle with?
@@ -509,7 +535,7 @@ This space is yours to add to as needed.
 
 
 
-#### What did you achieve?
+#### What did you achieve/do?
 * n/a
 
 #### What did you struggle with?
@@ -533,7 +559,7 @@ This space is yours to add to as needed.
 
 
 
-#### What did you achieve?
+#### What did you achieve/do?
 * n/a
 
 #### What did you struggle with?
@@ -557,7 +583,7 @@ This space is yours to add to as needed.
 
 
 
-#### What did you achieve?
+#### What did you achieve/do?
 * n/a
 
 #### What did you struggle with?
