@@ -40,7 +40,7 @@ import time
 from nilearn.image import resample_to_img, resample_img
 from scipy.ndimage import generate_binary_structure, binary_closing, binary_dilation, binary_erosion, center_of_mass
 from scipy.ndimage import label as nd_label
-
+import json
 import subprocess
 from skimage.exposure import rescale_intensity
 from skimage.measure import label
@@ -173,7 +173,13 @@ def process_cmb_mask(label_im, msg):
     msg += f'\t\tNumber of CMBs: {len(com_list)}. Sizes: {pixel_counts},' + \
             f' Radii: {radii}, Unique labels: {unique_labels}, Counts: {counts}\n'
 
-    return processed_mask_nib, com_list, pixel_counts, radii, msg
+    metadata = {
+        'centers_of_mass': com_list,
+        'pixel_counts': pixel_counts,
+        'radii': radii
+    }
+
+    return processed_mask_nib, metadata, msg
 
 
 
@@ -199,9 +205,9 @@ def perform_VALDO_QC(args, subject, mris, annotations, msg):
 
     # Quality Control of Labels
     for anno_sequence, anno_im in annotations.items():
-        annotations_qc[anno_sequence], cc_list, n_pixels_list, radii, msg = process_cmb_mask(anno_im, msg)
-        annotations_metadata[anno_sequence] = (cc_list, n_pixels_list, radii)
-    
+        annotations_qc[anno_sequence], metadata, msg = process_cmb_mask(anno_im, msg)
+        annotations_metadata[anno_sequence] = metadata
+
     # Quality Control of MRI Sequences
     for mri_sequence, mri_im in mris.items():
         mris_qc[mri_sequence], msg = process_VALDO_mri(mri_im, msg)
@@ -518,6 +524,15 @@ def combine_annotations(annotations, priorities, msg=''):
     
     return combined_annotations, msg
 
+def numpy_to_list(obj):
+    if isinstance(obj, np.ndarray):
+        return obj.tolist()
+    elif isinstance(obj, dict):
+        return {key: numpy_to_list(value) for key, value in obj.items()}
+    elif isinstance(obj, list):
+        return [numpy_to_list(item) for item in obj]
+    else:
+        return obj
 
 def process_study(args, subject, msg=''):
     """
@@ -570,20 +585,26 @@ def process_study(args, subject, msg=''):
         
         # Check Annotations Stats
         msg += "\tChecking new stats for annotations after transforms\n"
-        _, cc_list, n_pixels_list, radii, msg = process_cmb_mask(annotations_image, msg)
-        annotations_metadata_new = {args.primary_sequence: (cc_list, n_pixels_list, radii)}
+        _, metadata, msg = process_cmb_mask(annotations_image, msg)
+        annotations_metadata_new = {args.primary_sequence: metadata}
+
 
         # Save to Disk
         nib.save(mris_image, os.path.join(args.data_dir_path, subject, args.mris_subdir, subject + '.nii.gz'))
         nib.save(annotations_image, os.path.join(args.data_dir_path, subject, args.annotations_subdir, subject + '.nii.gz'))
         
-        # Save Metadata for CMBs
-        with open(os.path.join(args.data_dir_path, subject, args.annotations_metadata_subdir, f'{subject}_raw.pkl'), "wb") as file:
-            pickle.dump(labels_metadata, file)
-        with open(os.path.join(args.data_dir_path, subject, args.annotations_metadata_subdir, f'{subject}_processed.pkl'), "wb") as file:
-            pickle.dump(annotations_metadata_new, file)
+        # Convert numpy arrays to lists
+        labels_metadata_listed = numpy_to_list(labels_metadata)
+        annotations_metadata_new_listed = numpy_to_list(annotations_metadata_new)
+
+        # Save Metadata for CMBs using JSON format
+        with open(os.path.join(args.data_dir_path, subject, args.annotations_metadata_subdir, f'{subject}_raw.json'), "w") as file:
+            json.dump(labels_metadata_listed, file, indent=4)
+        with open(os.path.join(args.data_dir_path, subject, args.annotations_metadata_subdir, f'{subject}_processed.json'), "w") as file:
+            json.dump(annotations_metadata_new_listed, file, indent=4)
     
     except Exception:
+            
         msg += f'Failed to process {subject}!\n\nException caught: {traceback.format_exc()}'
     
     # Finalize
