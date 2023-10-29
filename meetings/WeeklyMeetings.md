@@ -2,13 +2,12 @@
 # Jorge's Weekly Meeting Notes
 
 * [9 October 2023](#date-9-october-2023)
-* [27 October 2023](#date-27-october-2023)
+* [30 October 2023](#date-30-october-2023)
 
 <!-- * [13 October 2023](#date-13-october-2023)
 * [16 October 2023](#date-16-october-2023)
 * [20 October 2023](#date-20-october-2023)
 * [23 October 2023](#date-23-october-2023)
-* [30 October 2023](#date-30-october-2023)
 * [3 November 2023](#date-3-november-2023)
 * [6 November 2023](#date-6-november-2023)
 * [10 November 2023](#date-10-november-2023)
@@ -75,7 +74,7 @@ This space is yours to add to as needed.
 
 #### What did you achieve/do?
 * familiarized with ClearML (MLOps infrastructure) and how to code in it: performed some basic experiment with brats19 dataset
-* analyzed VALDO dataset images. Found some issues and a lot of preprocessing needed. See metadata: [VALDO_new_metadata.csv](../data/VALDO_new_metadata.csv) 
+* analyzed VALDO dataset images. Found some issues and a lot of preprocessing needed. See metadata: [VALDO_metadata.csv](../data/VALDO_metadata.csv) 
 * Created structure for saving info from literature review into a DB in Notion
 
 * Collected >20 articles to read - mostly review articles - to get big picture of Segmentation task in general (following funnel). For now just collected a few about CMB segmentation specifically.
@@ -215,7 +214,7 @@ This space is yours to add to as needed.
 
 <br><br><br><br><br>
 
-### Date: 27 October 2023
+### Date: 30 October 2023
 
 
 
@@ -226,29 +225,26 @@ This space is yours to add to as needed.
     - Identify from internal data which have potentially microbleeds: ~70
     - Start planning how to set up annotation environment on Redbrick platform for Silvia Ingala to annotate
 
-* Preprocessing of VALDO dataset (IN PROGRESS)
+* Preprocessing of VALDO dataset (DONE, file: [data_preprocessing.csv](../scripts/data_preprocessing.csv))
+    1. Perform QC while loading data (handle Nans in MRI data, clean masks)
+    2. Resample and Standardize (T2s to isotropic, the rest resampled to T2s)
+    3. Crop (using brain mask)
+    4. Concatenate (stack together into single file)
 
-    0. Quality Control of rawdata
-        - handle Nans
-        - mask preparation: binarize to same values masks
-    1. Skull Stripping 
-    2. Crop (using brain mask)
-    3. Bias field correction?
-    4. Resampling and standarizing dimensions -> isotropic
-    5. Intensity normalization
-    6. Stack up data together (multi-sequence input)
+* Run U-Net model on preprocessed dataset using a "whole-mri" strategy (downsampling to small 64x64x64 size and inputtig to u-net). Results quite bad, see: [unnet_exp_1.png](../img/unnet_exp_1.png)
 
+* Split function for train-val-test maintaining proportion of healthy/unhealthy.
 
 #### What did you struggle with?
-* preprocessing
+* n/a
 
 #### What would you like to work on next ?
-1. Finish preprocessing
-2. Literature research on methods for CMB segmentation
-3. Implement U-Net
+1. Literature research on methods for CMB segmentation
+2. Implement U-Net but with nicer patch sampling startegy + other common tricks to see results.
 
 #### Where do you need help from Veronika?
 * Is there a standarized way of preprocessing data before feeding to CNN? Specially with regard to order of steps applied...
+* Best metric to evaluate when class imbalance is so big? CMB are tiny
 
 #### Others
 
@@ -263,28 +259,6 @@ This space is yours to add to as needed.
 (Tumor, Hemorrhage, Infarct; of various types)
 
 <br><br><br><br><br>
-
-### Date: 30 October 2023
-
-
-
-
-
-#### What did you achieve/do?
-* n/a
-
-#### What did you struggle with?
-* n/a
-
-#### What would you like to work on next ?
-* n/a
-
-#### Where do you need help from Veronika?
-* n/a
-
-#### Others
-
-* n/a
 
 
 ### Date: 3 November 2023
