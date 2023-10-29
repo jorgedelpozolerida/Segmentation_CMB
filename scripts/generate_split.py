@@ -49,13 +49,13 @@ def create_splits(data_dir, seed=42):
     for subj_folder in os.listdir(data_dir):
         subj_path = os.path.join(data_dir, subj_folder)
         if os.path.isdir(subj_path):
-            metadata_filepath = os.path.join(subj_path, 'Annotations_metadata' , f'{subj_folder}_raw.pkl')
+            metadata_filepath = os.path.join(subj_path, 'Annotations_metadata' , f'{subj_folder}_raw.json')
 
             if os.path.exists(metadata_filepath):
                 with open(metadata_filepath, 'rb') as file:
-                    metadata_dict = pickle.load(file)
+                    metadata_dict = json.load(file)
 
-                if len(metadata_dict['T2S'][0]) == 0:
+                if len(metadata_dict['T2S']['centers_of_mass']) == 0:
                     healthy_subjects.append(subj_folder)
                 else:
                     unhealthy_subjects.append(subj_folder)
