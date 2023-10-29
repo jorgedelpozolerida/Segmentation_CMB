@@ -66,21 +66,23 @@ def process_study(args, subject):
     old_subject_dir = os.path.join(args.in_dir, subject)
 
     niftis = [n for n in os.listdir(old_subject_dir) if not n.startswith('._')]
-    
+
     data = {
         'subject': [],  'X_dim': [], 'Y_dim': [], 
-        'Z_dim': [], 'dx': [], 'dy': [], 'dz': [], 'has_nan': [], 'pix_mean_val': [], 
-        'pix_min_val': [], 'pix_man_val': [], 'Space': [], 'Description': [], 
+        'Z_dim': [], 'dx': [], 'dy': [], 'dz': [], 
+        'has_nan': [], 'nan_percent': [],
+        'pix_mean_val': [], 'pix_min_val': [], 'pix_man_val': [], 'Space': [],
+        'Description': [], 
         'MRSequence': [], 'CMB_label': [], 'CMB_npix': [], 'data_type': [], 
         'orientation': [], 'filename': [], 'full_path': []
     }
     mri = {}
-    
+
     for nifti in niftis:
         match = re.search(r'sub-\w+_space-(\w+)_desc-(\w+)_(\w+).', nifti)
         full_path = os.path.join(old_subject_dir, nifti)
         metadata = get_image_metadata(full_path)
-        
+
         data['subject'].append(subject)
         data['filename'].append(nifti)
         data['X_dim'].append(metadata['shape'][0])
@@ -96,12 +98,13 @@ def process_study(args, subject):
         data['orientation'].append(metadata['orientation'])
         data['full_path'].append(full_path)
         data['has_nan'].append(np.any(np.isnan(metadata['data'])) )
-        
-        
+        data['nan_percent'].append(np.sum(np.isnan(metadata['data']))/len(metadata['data'].flatten())*100)
+
+
         if match:
-            data['Space'].append(match.group(1))
-            data['Description'].append(match.group(2))
-            data['MRSequence'].append(match.group(3))
+            data['Space'].append(match[1])
+            data['Description'].append(match[2])
+            data['MRSequence'].append(match[3])
         else:
             data['Space'].append(None)
             data['Description'].append(None)
@@ -117,13 +120,11 @@ def process_study(args, subject):
             data['CMB_label'].append(None)
             data['CMB_npix'].append(None)
             if match:
-                mri[match.group(3)] = full_path
+                mri[match[3]] = full_path
 
     assert len(mri) == 3, f"Following study has some issue: {subject}"
-    
-    dataout = pd.DataFrame(data)
 
-    return dataout
+    return pd.DataFrame(data)
 
 
     
@@ -176,8 +177,7 @@ def parse_args():
                         help='Path to the output directory to save dataset')
     parser.add_argument('--num_workers', type=int, default=5,
                             help='Number of workers running in parallel')
-    args = parser.parse_args()
-    return args
+    return parser.parse_args()
 
 
 if __name__ == '__main__':
