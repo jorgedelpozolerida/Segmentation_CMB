@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*-coding:utf-8 -*-
-""" Script to preprocess  "VALDO challenge (Task2)" dataset
+""" Script to pre-process datasets
 
 Steps and order followed to process data:
 
@@ -9,6 +9,8 @@ Steps and order followed to process data:
 # 3. Crop (using brain mask)
 # 4. Concatenate (stack together into single file)
 
+Datasets implement:
+- VALDO challenge
 
 Notes:
 - Works in paralell using as many CPUs as specified

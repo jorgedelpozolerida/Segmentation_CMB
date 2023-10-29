@@ -225,7 +225,7 @@ This space is yours to add to as needed.
     - Identify from internal data which have potentially microbleeds: ~70
     - Start planning how to set up annotation environment on Redbrick platform for Silvia Ingala to annotate
 
-* Preprocessing of VALDO dataset (DONE, file: [data_preprocessing.csv](../scripts/data_preprocessing.csv))
+* Preprocessing of VALDO dataset (DONE, file: [data_preprocessing.py](../scripts/data_preprocessing.py))
     1. Perform QC while loading data (handle Nans in MRI data, clean masks)
     2. Resample and Standardize (T2s to isotropic, the rest resampled to T2s)
     3. Crop (using brain mask)
