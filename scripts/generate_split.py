@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 # -*-coding:utf-8 -*-
-""" Generates split of dataset
+""" Generates split file for dataset
 
-
-{Long Description of Script}
-
+Two different split types implemented, both keeping healthy-ill patients ratio
+for each split.
 
 @author: jorgedelpozolerida
 @date: 29/10/2023
@@ -31,17 +30,18 @@ from collections import defaultdict
 
 def create_splits(data_dir, seed=42):
     """
-    Splits data into train, validation, and test sets while maintaining the proportion of healthy and unhealthy subjects.
+    Splits data into train, validation, and optionally test sets while maintaining the proportion of healthy and unhealthy subjects.
     
     Args:
         data_dir (str): Directory containing the subfolders for each subject.
+        split_type (str): Type of split ('train_val_test' or 'train_val').
         seed (int): Random seed for reproducibility.
 
     Returns:
-        dict: Dictionary with keys 'train', 'validation', 'test' and corresponding subfolder lists as values.
+        dict: Dictionary with keys 'train', 'validation', 'test' (if applicable) and corresponding subfolder lists as values.
     """
     random.seed(seed)
-    
+
     healthy_subjects = []
     unhealthy_subjects = []
 
@@ -50,7 +50,7 @@ def create_splits(data_dir, seed=42):
         subj_path = os.path.join(data_dir, subj_folder)
         if os.path.isdir(subj_path):
             metadata_filepath = os.path.join(subj_path, 'Annotations_metadata' , f'{subj_folder}_raw.pkl')
-            
+
             if os.path.exists(metadata_filepath):
                 with open(metadata_filepath, 'rb') as file:
                     metadata_dict = pickle.load(file)
@@ -67,22 +67,31 @@ def create_splits(data_dir, seed=42):
     # Calculate split sizes
     num_healthy = len(healthy_subjects)
     num_unhealthy = len(unhealthy_subjects)
-    
+
     healthy_train_size = int(num_healthy * 0.7)
-    healthy_val_test_size = num_healthy - healthy_train_size
     unhealthy_train_size = int(num_unhealthy * 0.7)
-    unhealthy_val_test_size = num_unhealthy - unhealthy_train_size
 
     # Create splits
     splits = defaultdict(list)
     splits['train'] = healthy_subjects[:healthy_train_size] + unhealthy_subjects[:unhealthy_train_size]
-    splits['validation'] = healthy_subjects[healthy_train_size:healthy_train_size + healthy_val_test_size // 2] + unhealthy_subjects[unhealthy_train_size:unhealthy_train_size + unhealthy_val_test_size // 2]
-    splits['test'] = healthy_subjects[healthy_train_size + healthy_val_test_size // 2:] + unhealthy_subjects[unhealthy_train_size + unhealthy_val_test_size // 2:]
 
+    if args.split_type == 'train_val':
+        healthy_val_size = num_healthy - healthy_train_size
+        unhealthy_val_size = num_unhealthy - unhealthy_train_size
+
+        splits['valid'] = healthy_subjects[healthy_train_size:] + unhealthy_subjects[unhealthy_train_size:]
+
+    elif args.split_type == 'train_val_test':
+        healthy_val_test_size = num_healthy - healthy_train_size
+        unhealthy_val_test_size = num_unhealthy - unhealthy_train_size
+
+        splits['valid'] = healthy_subjects[healthy_train_size:healthy_train_size + healthy_val_test_size // 2] + unhealthy_subjects[unhealthy_train_size:unhealthy_train_size + unhealthy_val_test_size // 2]
+        splits['test'] = healthy_subjects[healthy_train_size + healthy_val_test_size // 2:] + unhealthy_subjects[unhealthy_train_size + unhealthy_val_test_size // 2:]
+    
     # Shuffle splits to mix healthy and unhealthy subjects
     for key in splits:
         random.shuffle(splits[key])
-    
+
     return splits
 
 
@@ -94,7 +103,7 @@ def main(args):
     splits_dict = create_splits(data_dir, seed=42)
 
     # Save to splits.json
-    split_path = os.path.join(args.dataset_dir, 'splits.json')
+    split_path = os.path.join(data_dir, 'splits.json')
     _logger.info(f"File path: {split_path}")
     if os.path.exists(split_path) and not args.overwrite:
         _logger.warning("Splits already exist, add overwrite flag if wanted")
@@ -117,6 +126,8 @@ def parse_args():
                         help='Add this flag if you want to overwrite file')
     parser.add_argument('--dataset_dir', type=str, default=None,
                         help='Path to the dataset folder of dataset which has Data/ folder inside with subjects')
+    parser.add_argument('--split_type', type=str, choices=['train_val_test', 'train_val'], 
+                        default='train_val_test', help='Type of split to create (default: train_val_test)')
 
     return parser.parse_args()
 

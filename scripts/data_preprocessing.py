@@ -499,6 +499,26 @@ def crop_and_concatenate(mris, annotations, primary_sequence, save_sequence_orde
 
     return cropped_mris, cropped_annotations, msg
 
+def combine_annotations(annotations, priorities, msg=''):
+    '''
+    Combines multi-channel annotations to single-channel according to label priotiries.
+    Args:
+        annotations (np.array): Annotations array.
+        priorities ([int]): Label priorities.
+        msg (str)(optional): Log message.
+    Returns:
+        combined_annotations (np.array): Combined annotations array.
+        msg (optional): Log message.
+    '''
+    
+    # TODO: if with future datasets several labels, combine here. 
+    
+    # For now let's just take first channel (T2S)
+    combined_annotations = annotations[:, :, :, 0]
+    
+    return combined_annotations, msg
+
+
 def process_study(args, subject, msg=''):
     """
     Process a given study (subject) by performing a series of operations 
@@ -540,6 +560,9 @@ def process_study(args, subject, msg=''):
         mris_array, annotations_array, msg = crop_and_concatenate(
             mris, annotations, primary_sequence=args.primary_sequence, 
             save_sequence_order=args.save_sequence_order, msg=msg)
+        
+        # 4. Combine annotations
+        annotations_array, msg = combine_annotations(annotations_array, None, msg)
         
         # Convert to Nifti1Image
         mris_image = nib.Nifti1Image(mris_array.astype(np.float32), affine_after_resampling, header_after_resampling)
