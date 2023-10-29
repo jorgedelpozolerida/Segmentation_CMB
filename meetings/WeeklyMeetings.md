@@ -233,7 +233,7 @@ This space is yours to add to as needed.
 
 * Run U-Net model on preprocessed dataset using a "whole-mri" strategy (downsampling to small 64x64x64 size and inputtig to u-net). Results quite bad, see: [unnet_exp_1.png](../img/unnet_exp_1.png)
 
-* Split function for train-val-test maintaining proportion of healthy/unhealthy.
+* Split function for train-val-test maintaining proportion of healthy/unhealthy. See [generate_split.py](../scripts/generate_split.py)
 
 #### What did you struggle with?
 * n/a

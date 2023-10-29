@@ -2,7 +2,7 @@
 # -*-coding:utf-8 -*-
 """ Generates split file for dataset
 
-Two different split types implemented, both keeping healthy-ill patients ratio
+Two different split types implemented ('train+validation+test', 'train+validation'), both keeping healthy-ill patients ratio
 for each split.
 
 @author: jorgedelpozolerida
