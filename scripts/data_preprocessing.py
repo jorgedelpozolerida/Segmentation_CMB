@@ -517,6 +517,11 @@ def process_study(args, subject, msg=''):
     start = time.time()
     msg = f'Started processing {subject}...\n\n'
     
+    # Create dirs
+    for sub_d in [args.mris_subdir, args.annotations_subdir, args.annotations_metadata_subdir]:
+        ensure_directory_exists(os.path.join(args.data_dir_path, subject, sub_d))
+    
+    
     try:
         # 1. Perform QC while loading data
         mris, annotations, labels_metadata, msg = load_mris_and_annotations(args, subject, msg)
@@ -544,15 +549,15 @@ def process_study(args, subject, msg=''):
         msg += "\tChecking new stats for annotations after transforms\n"
         _, cc_list, n_pixels_list, radii, msg = process_cmb_mask(annotations_image, msg)
         annotations_metadata_new = {args.primary_sequence: (cc_list, n_pixels_list, radii)}
-        
+
         # Save to Disk
-        nib.save(mris_image, os.path.join(args.mris_dir_path, subject + '.nii.gz'))
-        nib.save(annotations_image, os.path.join(args.annotations_dir_path, subject + '.nii.gz'))
+        nib.save(mris_image, os.path.join(args.data_dir_path, subject, args.mris_subdir, subject + '.nii.gz'))
+        nib.save(annotations_image, os.path.join(args.data_dir_path, subject, args.annotations_subdir, subject + '.nii.gz'))
         
         # Save Metadata for CMBs
-        with open(os.path.join(args.annotations_metadata_dir_path, f'{subject}_raw.pkl'), "wb") as file:
+        with open(os.path.join(args.data_dir_path, subject, args.annotations_metadata_subdir, f'{subject}_raw.pkl'), "wb") as file:
             pickle.dump(labels_metadata, file)
-        with open(os.path.join(args.annotations_metadata_dir_path, f'{subject}_processed.pkl'), "wb") as file:
+        with open(os.path.join(args.data_dir_path, subject, args.annotations_metadata_subdir, f'{subject}_processed.pkl'), "wb") as file:
             pickle.dump(annotations_metadata_new, file)
     
     except Exception:
@@ -567,12 +572,12 @@ def process_study(args, subject, msg=''):
 def main(args):
 
     args.dataset_dir_path = os.path.join(args.output_dir, args.dataset_name)
-    data_dir_path = os.path.join(args.dataset_dir_path, 'Data')
-    args.mris_dir_path = os.path.join(data_dir_path, 'MRIs')
-    args.annotations_dir_path = os.path.join(data_dir_path, 'Annotations')
-    args.annotations_metadata_dir_path = os.path.join(data_dir_path, 'Annotations_metadata')
+    args.data_dir_path = os.path.join(args.dataset_dir_path, 'Data')
+    args.mris_subdir =  'MRIs'
+    args.annotations_subdir =  'Annotations'
+    args.annotations_metadata_subdir = 'Annotations_metadata'
     
-    for dir_p in [args.output_dir, args.dataset_dir_path, args.mris_dir_path, args.annotations_dir_path, args.annotations_metadata_dir_path ]:
+    for dir_p in [args.output_dir, args.dataset_dir_path, args.data_dir_path]:
         ensure_directory_exists(dir_p)
 
     current_time = datetime.now()
