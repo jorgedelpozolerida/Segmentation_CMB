@@ -3,13 +3,13 @@
 
 * [9 October 2023](#date-9-october-2023)
 * [30 October 2023](#date-30-october-2023)
-
+* [6 November 2023](#date-6-november-2023)
 <!-- * [13 October 2023](#date-13-october-2023)
 * [16 October 2023](#date-16-october-2023)
 * [20 October 2023](#date-20-october-2023)
 * [23 October 2023](#date-23-october-2023)
 * [3 November 2023](#date-3-november-2023)
-* [6 November 2023](#date-6-november-2023)
+* 
 * [10 November 2023](#date-10-november-2023)
 * [13 November 2023](#date-13-november-2023)
 * [17 November 2023](#date-17-november-2023)
@@ -292,20 +292,34 @@ This space is yours to add to as needed.
 
 
 #### What did you achieve/do?
-* n/a
+* Changes in preprocessing:
+    - voxel size of 0.5 for isotropic (interpolated masks did not look so good before)
+
+* Implemented region growing to construct CMB microbleed annotations based on landmark(s)
+    - Implemented my own version of algorithm + someposterior cleaning (see [region_growing.ipynb](../scripts/region_growing.ipynb))
 
 #### What did you struggle with?
-* n/a
+* Use sitk implementation for region growing, unsuccesful
+* Technical issues, not able to use GPUs from company server with tensorflow... not sure what solution is
+(big problem actually)
 
 #### What would you like to work on next ?
-* n/a
+* Literature review of methods used for CMB!!
+* More implementation:
+    - Use deeper U-net
+    - Add transforms ot images before loading into model: normalization 
+    - Add augmentations (e.g. intensity augmentations) + normalization again
+    - Implement patch sampling strategy...
 
 #### Where do you need help from Veronika?
-* n/a
+* Do you know a nice implementation of region growing algorithm? Mine is very prone to errors and 0 efficient
+* When collecting methods in literature for CMB segmentation, would you reocmmend looking at some specific points  in special?
 
 #### Others
 
-* n/a
+* I think my generated region growing masks sometimes look better than interpolated, perhaps worth it to reprocess interpolated ones 
+* Nice overview of CMBs available in dataset here: [CMB_processed.csv](../data/CMB_processed.csv)
+
 
 <br><br><br><br><br>
 
