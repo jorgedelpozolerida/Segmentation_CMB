@@ -50,10 +50,10 @@ def plot_mask_on_image(img_data, mask_data, cm_coords, alpha=0.5, title="",
     num_axes = len(axes_to_display) + 1
     fig, axes = plt.subplots(1, num_axes, figsize=(5 * num_axes, 5))
     
-    # Create a color map for bright red overlay
     if cmap_custom is None:
-        colors = [(0,0,0,0), (1,0,0,alpha)]  # from transparent to bright red
-        cmap = mcolors.LinearSegmentedColormap.from_list('custom_red', colors, N=2)
+        # colors = [(0,0,0,0), (1,0,0,alpha)]  # from transparent to bright red
+        # cmap = mcolors.LinearSegmentedColormap.from_list('custom_red', colors, N=2)
+        cmap = "Reds"
     else:
         cmap = cmap_custom
 
