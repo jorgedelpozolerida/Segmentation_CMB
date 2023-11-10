@@ -304,7 +304,7 @@ This space is yours to add to as needed.
 * Finished setting up annotation framework for CMB in-house:
     - Had alignment meetings with silvia to define annotation process:
         - Agreed on some taxonomy to use, see [taxonomy_CMB.json](../data/taxonomy_CMB.json) 
-        - Guidelines based partially on: [bombs-userguide.pdf](../papers/CMB/bombs-userguide.pdf)
+        - Guidelines based partially on: [bombs-userguide.pdf](../papers/used/CMB/bombs-userguide.pdf)
     - An image of how one annotation looks can be found here: [annotation_example.png](../scripts/annotation_example.png)
     - There are 43 cases with T2S and 22 cases with SWI.
     - I created a specific order of annotation, prioritizing cases with no patologies and then tumors and then the rest (and other things)
