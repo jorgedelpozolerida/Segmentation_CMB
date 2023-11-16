@@ -163,3 +163,4 @@ cython_debug/
 # JORGE
 testing/*
 /scripts/old/*
+experiments/_*
