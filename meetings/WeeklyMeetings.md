@@ -3,13 +3,12 @@
 
 * [9 October 2023](#date-9-october-2023)
 * [30 October 2023](#date-30-october-2023)
-* [6 November 2023](#date-6-november-2023)
+* [10 November 2023](#date-10-november-2023)
 <!-- * [13 October 2023](#date-13-october-2023)
 * [16 October 2023](#date-16-october-2023)
 * [20 October 2023](#date-20-october-2023)
 * [23 October 2023](#date-23-october-2023)
 * [3 November 2023](#date-3-november-2023)
-* 
 * [10 November 2023](#date-10-november-2023)
 * [13 November 2023](#date-13-november-2023)
 * [17 November 2023](#date-17-november-2023)
@@ -285,26 +284,40 @@ This space is yours to add to as needed.
 
 <br><br><br><br><br>
 
-### Date: 6 November 2023
-
-
+### Date: 10 November 2023
 
 
 
 #### What did you achieve/do?
 * Changes in preprocessing:
-    - voxel size of 0.5 for isotropic (interpolated masks did not look so good before)
+    - voxel size of 0.5 for isotropic (most of the images have half mm size, pitty to lose that)(not sure which size I'll use yet)
 
-* Implemented region growing to construct CMB microbleed annotations based on landmark(s)
-    - Implemented my own version of algorithm + someposterior cleaning (see [region_growing.ipynb](../scripts/region_growing.ipynb))
+* Implemented my own region growing algorithm to generate CMB microbleed mask from seeds
+    - Algorithm starts at seeds and adds iteratively neighbours based on tolerance. Tolerance level set for every case individually.
+    - Tested on VALDO data to see how it looks:
+        - Visually it looks good
+        - When looking at Dice scores (against GT) it varies a lot from sample to sample
+        - The smaller the CMb the worse the performance
+    - Results can be seen in [region_growing.ipynb](../scripts/region_growing.ipynb)
+
+* Configured credentials to use a different server for running experiments (experiencing tensorflow-Python-CUDA versions trouble)
+* Finished setting up annotation framework for CMB in-house:
+    - Had alignment meetings with silvia to define annotation process:
+        - Agreed on some taxonomy to use, see [taxonomy_CMB.json](../data/taxonomy_CMB.json) 
+        - Guidelines based partially on: [bombs-userguide.pdf](../papers/used/CMB/bombs-userguide.pdf)
+    - An image of how one annotation looks can be found here: [annotation_example.png](../scripts/annotation_example.png)
+    - There are 43 cases with T2S and 22 cases with SWI.
+    - I created a specific order of annotation, prioritizing cases with no patologies and then tumors and then the rest (and other things)
+
 
 #### What did you struggle with?
-* Use sitk implementation for region growing, unsuccesful
+* Implementing my own region growing, libraries like sitk did not seem to work fine...
 * Technical issues, not able to use GPUs from company server with tensorflow... not sure what solution is
 (big problem actually)
+* Spent a lot of time coordinating, analyzing data and scripting to generate the whole annottation setup...
 
 #### What would you like to work on next ?
-* Literature review of methods used for CMB!!
+* Literature review of methods used for CMB!! Create a nice table summarizing what people do with what and how
 * More implementation:
     - Use deeper U-net
     - Add transforms ot images before loading into model: normalization 
@@ -312,38 +325,17 @@ This space is yours to add to as needed.
     - Implement patch sampling strategy...
 
 #### Where do you need help from Veronika?
-* Do you know a nice implementation of region growing algorithm? Mine is very prone to errors and 0 efficient
-* When collecting methods in literature for CMB segmentation, would you reocmmend looking at some specific points  in special?
+* Do you know a nice implementation of region growing algorithm? Mine is definitly not perfect and not even sure if acceptable, although not bad either..
+* When collecting methods in literature for CMB segmentation, would you reocmmend looking at some specific points  in special? I'm thinking of creating a nice sumamry table but need to be speicfic on what to look for...
+* I am spending a lot of time in curating and generating a dataset of CMB. I guess this was not expected as part of the project proposal, but I'm thiking it's something equally valid to include in report along with the rest. What do you think?
+
 
 #### Others
 
 * I think my generated region growing masks sometimes look better than interpolated, perhaps worth it to reprocess interpolated ones 
-* Nice overview of CMBs available in dataset here: [CMB_processed.csv](../data/CMB_processed.csv)
+* Nice overview of CMBs available in VALDO dataset here: [CMB_processed.csv](../data/CMB_processed.csv)
+* Nice overview of CMBs to be annoatted by Silvia here: [CMB_detected_SilviaAnnotation.csv](../data/CMB_detected_SilviaAnnotation.csv)
 
-
-<br><br><br><br><br>
-
-### Date: 10 November 2023
-
-
-
-
-
-#### What did you achieve/do?
-* n/a
-
-#### What did you struggle with?
-* n/a
-
-#### What would you like to work on next ?
-* n/a
-
-#### Where do you need help from Veronika?
-* n/a
-
-#### Others
-
-* n/a
 
 <br><br><br><br><br>
 
