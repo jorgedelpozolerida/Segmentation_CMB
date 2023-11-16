@@ -45,9 +45,12 @@ def ensure_directory_exists(dir_path):
         os.makedirs(dir_path)
 
 def get_image_metadata(nifti_path):
+    
     img = nib.load(nifti_path)
-    xd, yd, zd = img.shape
-    dx, dy, dz = img.header.get_zooms()
+    shape = img.shape
+    xd, yd, zd = shape[0], shape[1], shape[2]
+    zooms = img.header.get_zooms()
+    dx, dy, dz = zooms[0], zooms[1], zooms[2]
     data = img.get_fdata()
     axcodes = nib.aff2axcodes(img.affine)
     
@@ -62,10 +65,11 @@ def get_image_metadata(nifti_path):
         'data': data
     }
 
-def process_study(args, subject):
-    old_subject_dir = os.path.join(args.in_dir, subject)
+def process_study_rawdataset(args, subject):
+    
+    subject_dir = os.path.join(args.in_dir, subject)
 
-    niftis = [n for n in os.listdir(old_subject_dir) if not n.startswith('._')]
+    niftis = [n for n in os.listdir(subject_dir) if not n.startswith('._')]
 
     data = {
         'subject': [],  'X_dim': [], 'Y_dim': [], 
@@ -80,7 +84,7 @@ def process_study(args, subject):
 
     for nifti in niftis:
         match = re.search(r'sub-\w+_space-(\w+)_desc-(\w+)_(\w+).', nifti)
-        full_path = os.path.join(old_subject_dir, nifti)
+        full_path = os.path.join(subject_dir, nifti)
         metadata = get_image_metadata(full_path)
 
         data['subject'].append(subject)
@@ -127,6 +131,67 @@ def process_study(args, subject):
     return pd.DataFrame(data)
 
 
+def process_study_processeddataset(args, subject):
+    
+    subject_dir = os.path.join(args.in_dir, subject)
+    mri_dir = os.path.join(subject_dir, args.nifti_dir)
+    label_dir = os.path.join(subject_dir, args.label_dir)
+    
+    
+    mri_niftis = [os.path.join(mri_dir, n) for n in os.listdir(mri_dir)]
+    label_niftis = [os.path.join(label_dir, n) for n in os.listdir(label_dir)]
+    all_niftis = mri_niftis + label_niftis
+
+    data = {
+        'subject': [],  'X_dim': [], 'Y_dim': [], 
+        'Z_dim': [], 'dx': [], 'dy': [], 'dz': [], 
+        'has_nan': [], 'nan_percent': [],
+        'pix_mean_val': [], 'pix_min_val': [], 'pix_man_val': [],  
+        'CMB_npix': [], 'data_type': [], 
+        'orientation': [], 'filename': [], 'full_path': []
+    }
+
+    for nifti_path in all_niftis:
+        
+        metadata = get_image_metadata(nifti_path)
+
+        data['subject'].append(subject)
+        data['filename'].append(os.path.basename(nifti_path).split('/')[-1])
+        data['X_dim'].append(metadata['shape'][0])
+        data['Y_dim'].append(metadata['shape'][1])
+        data['Z_dim'].append(metadata['shape'][2])
+        data['dx'].append(metadata['zooms'][0])
+        data['dy'].append(metadata['zooms'][1])
+        data['dz'].append(metadata['zooms'][2])
+        data['pix_mean_val'].append(metadata['mean_pixel'])
+        data['pix_min_val'].append(metadata['min_pixel'])
+        data['pix_man_val'].append(metadata['max_pixel'])
+        data['data_type'].append(metadata['data_type'])
+        data['orientation'].append(metadata['orientation'])
+        data['full_path'].append(nifti_path)
+        data['has_nan'].append(np.any(np.isnan(metadata['data'])) )
+        data['nan_percent'].append(np.sum(np.isnan(metadata['data']))/len(metadata['data'].flatten())*100)
+
+
+        if args.label_dir in nifti_path:
+            unique_labels = np.unique(metadata['data'])
+            amount_each = [np.sum(metadata['data'] == l) for l in unique_labels]
+            cmb_label = unique_labels[np.argmin(amount_each)]
+            data['CMB_npix'].append(np.sum(metadata['data'] == cmb_label) if len(unique_labels) == 2 else None)
+        else:
+            data['CMB_npix'].append(None)
+
+    return pd.DataFrame(data)
+
+def process_study(args, subject):
+
+    if args.processed_struct:
+        return process_study_processeddataset(args, subject)
+    else:
+        return process_study_rawdataset(args, subject)
+    
+
+
     
 def worker(args_subject):
     '''
@@ -145,6 +210,11 @@ def worker(args_subject):
 
 def main(args):
 
+    # Handle paths
+    if args.processed_struct:
+        args.nifti_dir = "MRIs"
+        args.label_dir = "Annotations"
+        
     # Ignore folder starting with weird symbol
     subjects = [d for d in os.listdir(args.in_dir) if os.path.isdir(os.path.join(args.in_dir, d))]
 
@@ -172,9 +242,11 @@ def parse_args():
     parser.add_argument('--dataset_name', type=str, default=None, required=True,
                         help='Name of dataset being processed')
     parser.add_argument('--in_dir', type=str, default=None, required=True,
-                        help='Path to the input directory of dataset')
+                        help='Path to the input directory of dataset. Must contains subject dirs as directories.')
     parser.add_argument('--out_dir', type=str, default=None, required=True,
                         help='Path to the output directory to save dataset')
+    parser.add_argument('--processed_struct', action='store_true', default=False,
+                        help='Add this flag if your data is in processed folder structure already')
     parser.add_argument('--num_workers', type=int, default=5,
                             help='Number of workers running in parallel')
     return parser.parse_args()
