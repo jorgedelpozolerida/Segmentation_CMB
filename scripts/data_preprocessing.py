@@ -54,6 +54,12 @@ from functools import partial
 logging.basicConfig(level=logging.INFO)
 _logger = logging.getLogger(__name__)
 
+# Get the logger for the package
+logger_nib = logging.getLogger('nibabel')
+
+# Set the log level to CRITICAL to deactivate normal logging
+logger_nib.setLevel(logging.CRITICAL)
+
 def ensure_directory_exists(dir_path):
     """ Create directory if non-existent """
     if not os.path.exists(dir_path):
@@ -335,10 +341,12 @@ def resample(source_image, target_image, interpolation, is_annotation=False,
         msg (str): Log message.
     '''
     if isotropic:
-        msg += f'\tResampling {source_sequence} MRI to isotropic using {interpolation} interpolation...\n'
+        msg += f'\tResampling {source_sequence} MRI to isotropic of voxel size {args.voxel_size} using {interpolation} interpolation...\n'
         msg += f'\t\tShape before resampling: {source_image.shape}\n'
 
-        resampled_image = resample_img(source_image, target_affine=np.eye(3),
+        desired_voxel_size = float(args.voxel_size)
+        isotropic_affine = np.diag([desired_voxel_size, desired_voxel_size, desired_voxel_size])
+        resampled_image = resample_img(source_image, target_affine=isotropic_affine,
                                         interpolation=interpolation,
                                         fill_value=np.min(source_image.get_fdata()),
                                         order='F')
@@ -417,8 +425,8 @@ def resample_mris_and_annotations(mris, annotations, primary_sequence, isotropic
         # resample annotation
         annotations[sequence], msg = resample(source_image=annotations[sequence],
                                                 target_image=mris[primary_sequence],
-                                                # interpolation='nearest',
-                                                interpolation='linear',
+                                                interpolation='nearest', # bcs binary mask
+                                                # interpolation='linear',
                                                 is_annotation=True,
                                                 source_sequence=sequence,
                                                 target_sequence=primary_sequence, msg=msg)
@@ -650,7 +658,9 @@ def parse_args():
                         default=['T2S', 'T2', 'T1'],
                         help='Order in which sequences in output MRI image will be saved')
     parser.add_argument('--primary_sequence', type=str, default='T2S',
-                        help='Primary sequence (to which the rest will be conformed to)')
+                        help='Primary sequence (to which the rest will be conformed to). Default T2S.')
+    parser.add_argument('--voxel_size', type=float, default=0.5,
+                        help='Voxel size of isotropic space. default 0.5')
     parser.add_argument('--input_dir', type=str, default=None, required=True,
                         help='Path to the input directory of dataset')
     parser.add_argument('--output_dir', type=str, default=None,
