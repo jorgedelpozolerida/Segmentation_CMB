@@ -340,7 +340,7 @@ This space is yours to add to as needed.
 
 <br><br><br><br><br>
 
-### Date: 13 November 2023
+### Date: 17 November 2023
 
 
 
@@ -369,29 +369,6 @@ and gathering extra info of interest. My selection of fields:
 
 * n/a
 
-<br><br><br><br><br>
-
-### Date: 17 November 2023
-
-
-
-
-
-#### What did you achieve/do?
-* 
-
-#### What did you struggle with?
-* n/a
-
-#### What would you like to work on next ?
-* n/a
-
-#### Where do you need help from Veronika?
-* n/a
-
-#### Others
-
-* n/a
 
 <br><br><br><br><br>
 
