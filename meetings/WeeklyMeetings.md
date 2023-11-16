@@ -4,6 +4,7 @@
 * [9 October 2023](#date-9-october-2023)
 * [30 October 2023](#date-30-october-2023)
 * [10 November 2023](#date-10-november-2023)
+* [17 November 2023](#date-17-november-2023)
 <!-- * [13 October 2023](#date-13-october-2023)
 * [16 October 2023](#date-16-october-2023)
 * [20 October 2023](#date-20-october-2023)
@@ -346,16 +347,23 @@ This space is yours to add to as needed.
 
 
 #### What did you achieve/do?
-* n/a
+* Implementing patch-sampling strategy (WIP)
+* I found an amazing recent review paper for CMB detection! Honestly, they pretty much nailed it.
+I'm planning to build on top of their findings by subsetting interesting approaches
+and gathering extra info of interest. My selection of fields: 
+[overview_table.png](../data/overview_table.png)
+    - In yellow, those extra  want to collect
 
 #### What did you struggle with?
 * n/a
 
 #### What would you like to work on next ?
-* n/a
+* Finish implementation and get results
+* Finish literature review on the task
+* Start writing report
 
 #### Where do you need help from Veronika?
-* n/a
+* What do you think about table with approaches summary? Would you add some field?
 
 #### Others
 
@@ -370,7 +378,7 @@ This space is yours to add to as needed.
 
 
 #### What did you achieve/do?
-* n/a
+* 
 
 #### What did you struggle with?
 * n/a
