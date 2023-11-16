@@ -351,7 +351,7 @@ This space is yours to add to as needed.
 * I found an amazing recent review paper for CMB detection! Honestly, they pretty much nailed it.
 I'm planning to build on top of their findings by subsetting interesting approaches
 and gathering extra info of interest. My selection of fields: 
-[overview_table.png](../data/overview_table.png)
+[overview_table.png](../img/overview_table.png)
     - In yellow, those extra  want to collect
 
 #### What did you struggle with?
