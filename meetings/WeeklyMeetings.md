@@ -5,6 +5,7 @@
 * [30 October 2023](#date-30-october-2023)
 * [10 November 2023](#date-10-november-2023)
 * [17 November 2023](#date-17-november-2023)
+* [27 November 2023](#date-27-november-2023)
 <!-- * [13 October 2023](#date-13-october-2023)
 * [16 October 2023](#date-16-october-2023)
 * [20 October 2023](#date-20-october-2023)
@@ -426,23 +427,34 @@ and gathering extra info of interest. My selection of fields:
 
 
 
-
+Note: since I started a new course, I will not be able to attend Monday meetings anymore due to overlap.
 
 #### What did you achieve/do?
-* n/a
+* Read new papers
+* Read more in detail papers I skimmed in the past
+* Progressed a lot with report writing
 
 #### What did you struggle with?
 * n/a
 
 #### What would you like to work on next ?
-* n/a
+* Finish the best I can of report for Thursday
+* During next 2 weeks, I'll try to have at least the one main experiment + evaluation (with custom metrics, based on Metrics reloaded among others) and if time allows (highly doubt so) also the more:
+
+| experiment_id | Architecture | Patch Sampling |  Dataset  | Augmentations | MR seq | FP reduction |             Loss            |
+|:-------------:|:------------:|:--------------:|:---------:|:-------------:|:------:|:------------:|:---------------------------:|
+| 1             | 3D U-Net     | 64x            | VALDO_1   | no            | T2s    | no           | class-balanced              |
+| 2             | 3D U-Net     | 64x            | VALDO_0.5 | no            | T2s    | no           | overlap-based + count-based |
+
+* Also I already have annotated data from Silvia, so I want to check quality and include in my report after region growing
 
 #### Where do you need help from Veronika?
-* n/a
+* Doubt for the future: can I include report writing in RP in MSc thesis report?
+* Since I won't be able to meet on Mondays (and all meetings are scheduled for Mondays from now one before the 15th), can we perhaps schedule one or two meetings out of schedule for December? 
 
 #### Others
 
-* n/a
+* I really like the papers you provided, I could read them more in depth now
 
 <br><br><br><br><br>
 

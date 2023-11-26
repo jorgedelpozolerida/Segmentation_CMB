@@ -1,0 +1,68 @@
+Paper,Specified dataset,Unspecified dataset,AD,CADASIL,SMART,TBI,ICH,CAA,CVA,GT,HD,AS,CMB-only
+Afzal et al. (2022),–,✓,–,–,–,–,–,–,–,–,–,–,yes
+Al-masni et al. (2020a),✓,–,–,–,–,–,–,–,–,–,–,–,yes
+Al-masni et al. (2020b),✓,–,–,–,–,–,–,–,–,–,–,–,yes
+Ateeq et al. (2018),✓,–,–,–,–,–,–,–,–,–,–,–,yes
+Bao et al. (2018),–,✓,–,yes,–,–,–,–,–,–,–,–,–
+Barnes et al. (2011),✓,–,yes,–,–,–,–,–,–,–,–,–,–
+Bian et al. (2013),✓,–,–,–,–,–,–,–,–,yes,–,–,–
+Chen et al. (2015),✓,–,–,–,–,–,–,–,–,–,–,–,yes
+Chen et al. (2017),✓,–,–,–,–,–,–,–,–,–,–,–,yes
+Chen et al. (2019),✓,–,–,–,–,–,–,–,–,yes,–,–,–
+Chesebro et al. (2021),✓,–,yes,–,–,–,–,–,–,–,–,–,–
+Doke et al. (2020),–,✓,–,yes,–,–,–,–,–,–,–,–,–
+Dou et al. (2016),✓,–,–,–,–,–,–,–,–,–,–,–,yes
+Dou et al. (2020),✓,–,–,–,–,–,–,–,–,–,–,–,yes
+Fan et al. (2022),✓,–,–,–,–,–,–,–,–,–,–,–,yes
+Fazlollahi et al. (2013),✓,–,yes,–,–,–,–,–,–,–,–,–,–
+Fazlollahi et al. (2014),✓,–,yes,–,–,–,–,–,–,–,–,–,–
+Fazlollahi et al. (2015),✓,–,yes,–,–,–,–,–,–,–,–,–,–
+Ferlin et al. (2021),✓,–,–,–,–,–,–,–,–,–,–,–,yes
+Ferrer et al. (2023),✓,–,yes,–,–,–,–,–,yes,–,–,–,–
+Ghafaryasl et al. (2012),✓,–,yes,–,–,–,–,–,–,–,–,–,–
+Gunter et al. (2018),✓,–,yes,–,–,–,–,–,–,–,–,–,–
+Gunter et al. (2022),✓,–,yes,–,–,–,–,–,–,–,–,–,–
+"Hong, Cheng, Wang (2019)",✓,–,–,yes,–,–,–,–,–,–,–,–,–
+"Hong, Cheng, Zhang (2019)",✓,–,–,yes,–,–,–,–,–,–,–,–,–
+Hong et al. (2020),✓,–,–,yes,–,–,–,–,–,–,–,–,–
+Kim et al. (2022),✓,–,–,–,–,–,–,–,–,–,–,–,yes
+Koschmieder et al. (2022),✓,–,–,–,–,yes,–,–,–,–,–,–,–
+Kuijf et al. (2011),✓,–,–,–,yes,–,–,–,–,–,–,–,–
+Kuijf et al. (2012),✓,–,–,–,yes,–,–,–,–,–,–,–,–
+Kuijf et al. (2013),✓,–,yes,–,–,–,–,–,–,–,–,–,–
+Lee et al. (2022),✓,–,–,–,–,–,–,–,–,–,–,–,yes
+Li et al. (2021),✓,–,–,–,–,–,–,–,–,–,–,–,yes
+"Liu, Surapaneni et al. (2012)",✓,–,–,–,–,–,–,–,yes,–,–,–,–
+Liu et al. (2019),✓,–,–,–,–,yes,–,–,yes,–,yes,–,–
+Liu et al. (2020),✓,–,–,–,–,–,–,–,–,–,–,–,yes
+Lu et al. (2017),✓,–,–,–,–,–,–,–,–,–,–,–,yes
+Lu et al. (2020),–,✓,–,yes,–,–,–,–,–,–,–,–,–
+"Lu, Liu, Wang et al. (2021)",✓,–,–,yes,–,–,–,–,–,–,–,–,–
+"Lu, Nayak et al. (2021)",✓,–,–,yes,–,–,–,–,–,–,–,–,–
+"Lu, Yan et al. (2021)",–,✓,–,yes,–,–,–,–,–,–,–,–,–
+Momeni et al. (2021),✓,–,yes,–,–,–,–,–,–,–,–,–,–
+Morrison et al. (2018),✓,–,–,–,–,–,–,–,–,yes,–,–,–
+Myung et al. (2021),–,✓,–,–,–,–,–,–,–,–,–,–,yes
+Nandigam et al. (2009),✓,–,–,–,–,–,yes,yes,–,–,–,–,–
+Nikseresht et al. (2022),✓,–,yes,–,–,–,–,–,–,–,–,–,–
+Roy et al. (2015),–,✓,–,–,–,yes,–,–,–,–,–,–,–
+Dou et al. (2015),✓,–,–,–,–,–,–,–,yes,–,–,–,–
+Rashid et al. (2021),✓,–,–,–,–,–,–,–,–,–,–,yes,–
+Sa-ngiem et al. (2019),–,✓,–,–,–,–,–,–,–,–,–,–,yes
+Seghier et al. (2011),✓,–,–,–,–,–,–,–,yes,–,–,–,–
+Standvoss et al. (2018),–,✓,–,–,–,yes,–,–,–,–,–,–,–
+Stanley and Franklin (2022a),✓,–,–,–,–,–,–,–,–,–,–,–,yes
+Stanley and Franklin (2022b),✓,–,–,–,–,–,–,–,–,–,–,–,yes
+Sundaresan et al. (2022),✓,–,–,–,–,–,yes,–,yes,–,–,–,yes
+Suwalska et al. (2022),✓,–,–,–,–,–,–,–,–,–,–,–,yes
+Tajudin et al. (2017),–,✓,–,–,–,–,–,–,–,–,–,–,yes
+Tao and Cloutie (2018),–,✓,–,yes,–,–,–,–,–,–,–,–,–
+van den Heuvel et al. (2015),–,✓,–,–,–,yes,–,–,–,–,–,–,–
+van den Heuvel et al. (2016),–,✓,–,–,–,yes,–,–,–,–,–,–,–
+Vieira (2023),✓,–,–,–,–,–,–,–,–,–,–,–,yes
+Wang et al. (2017),–,✓,–,yes,–,–,–,–,–,–,–,–,–
+Wang et al. (2019),–,✓,–,yes,–,–,–,–,–,–,–,–,–
+Wang et al. (2020),–,✓,–,yes,–,–,–,–,–,–,–,–,–
+Zhang et al. (2016),✓,–,–,yes,–,–,–,–,–,–,–,–,–
+"Zhang, Hou et al. (2018)",✓,–,–,yes,–,–,–,–,–,–,–,–,–
+"Zhang, Zhang et al. (2018)",✓,–,–,yes,–,–,–,–,–,–,–,–,–

@@ -164,3 +164,5 @@ cython_debug/
 testing/*
 /scripts/old/*
 experiments/_*
+Machine Learning for Cerebrovascular Disorders.pdf
+Metrics reloaded: Recommendations for image analysis validation.pdf
