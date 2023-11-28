@@ -32,14 +32,6 @@ logging.basicConfig(level=logging.INFO)
 _logger = logging.getLogger(__name__)
 import re
 
-# Constant to define order in which sequences are stacked together
-MRI_ORDER = {
-    "T2S": 0,
-    "T2": 1,
-    "T1": 2
-}
-
-
 def ensure_directory_exists(dir_path):
     if not os.path.exists(dir_path):
         os.makedirs(dir_path)
