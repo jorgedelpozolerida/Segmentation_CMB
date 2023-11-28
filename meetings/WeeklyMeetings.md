@@ -4,6 +4,8 @@
 * [9 October 2023](#date-9-october-2023)
 * [30 October 2023](#date-30-october-2023)
 * [10 November 2023](#date-10-november-2023)
+* [17 November 2023](#date-17-november-2023)
+* [27 November 2023](#date-27-november-2023)
 <!-- * [13 October 2023](#date-13-october-2023)
 * [16 October 2023](#date-16-october-2023)
 * [20 October 2023](#date-20-october-2023)
@@ -339,30 +341,6 @@ This space is yours to add to as needed.
 
 <br><br><br><br><br>
 
-### Date: 13 November 2023
-
-
-
-
-
-#### What did you achieve/do?
-* n/a
-
-#### What did you struggle with?
-* n/a
-
-#### What would you like to work on next ?
-* n/a
-
-#### Where do you need help from Veronika?
-* n/a
-
-#### Others
-
-* n/a
-
-<br><br><br><br><br>
-
 ### Date: 17 November 2023
 
 
@@ -370,20 +348,28 @@ This space is yours to add to as needed.
 
 
 #### What did you achieve/do?
-* n/a
+* Implementing patch-sampling strategy (WIP)
+* I found an amazing recent review paper for CMB detection! Honestly, they pretty much nailed it.
+I'm planning to build on top of their findings by subsetting interesting approaches
+and gathering extra info of interest. My selection of fields: 
+[overview_table.png](../img/overview_table.png)
+    - In yellow, those extra  want to collect
 
 #### What did you struggle with?
 * n/a
 
 #### What would you like to work on next ?
-* n/a
+* Finish implementation and get results
+* Finish literature review on the task
+* Start writing report
 
 #### Where do you need help from Veronika?
-* n/a
+* What do you think about table with approaches summary? Would you add some field?
 
 #### Others
 
 * n/a
+
 
 <br><br><br><br><br>
 
@@ -441,23 +427,34 @@ This space is yours to add to as needed.
 
 
 
-
+Note: since I started a new course, I will not be able to attend Monday meetings anymore due to overlap.
 
 #### What did you achieve/do?
-* n/a
+* Read new papers
+* Read more in detail papers I skimmed in the past
+* Progressed a lot with report writing
 
 #### What did you struggle with?
 * n/a
 
 #### What would you like to work on next ?
-* n/a
+* Finish the best I can of report for Thursday
+* During next 2 weeks, I'll try to have at least the one main experiment + evaluation (with custom metrics, based on Metrics reloaded among others) and if time allows (highly doubt so) also the more:
+
+| experiment_id | Architecture | Patch Sampling |  Dataset  | Augmentations | MR seq | FP reduction |             Loss            |
+|:-------------:|:------------:|:--------------:|:---------:|:-------------:|:------:|:------------:|:---------------------------:|
+| 1             | 3D U-Net     | 64x            | VALDO_1   | no            | T2s    | no           | class-balanced              |
+| 2             | 3D U-Net     | 64x            | VALDO_0.5 | no            | T2s    | no           | overlap-based + count-based |
+
+* Also I already have annotated data from Silvia, so I want to check quality and include in my report after region growing
 
 #### Where do you need help from Veronika?
-* n/a
+* Doubt for the future: can I include report writing in RP in MSc thesis report?
+* Since I won't be able to meet on Mondays (and all meetings are scheduled for Mondays from now one before the 15th), can we perhaps schedule one or two meetings out of schedule for December? 
 
 #### Others
 
-* n/a
+* I really like the papers you provided, I could read them more in depth now
 
 <br><br><br><br><br>
 

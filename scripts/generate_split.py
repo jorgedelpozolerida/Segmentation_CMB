@@ -127,7 +127,7 @@ def parse_args():
     parser.add_argument('--dataset_dir', type=str, default=None,
                         help='Path to the dataset folder of dataset which has Data/ folder inside with subjects')
     parser.add_argument('--split_type', type=str, choices=['train_val_test', 'train_val'], 
-                        default='train_val_test', help='Type of split to create (default: train_val_test)')
+                        default='train_val', help='Type of split to create (default: train_val_test)')
 
     return parser.parse_args()
 
