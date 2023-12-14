@@ -57,7 +57,7 @@ Configuration files for training of the different segmentation experiments in Cl
 Images used for report
 
 
-### Scripts
+### [Scripts](scripts/)
 This folder host Python scripts and notebooks and R code used for several tasks
 of the project.
 
