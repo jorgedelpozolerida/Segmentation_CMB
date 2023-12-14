@@ -1,5 +1,7 @@
 # Segmentation_CMB
-Repository containing results of my Research Project done in collaboration with [CEREBRIU](https://cerebriu.com/) company as part of my Msc in Data Science at [IT University of Copenhagen](https://en.itu.dk/). Please read full report in [Automated Segmentation of CMB](JorgedelPozoLerida_ResearchProject_AutomatedSegmentationofCMB.pdf)
+Repository containing results of my Research Project done in collaboration with [CEREBRIU](https://cerebriu.com/) company as part of my Msc in Data Science at [IT University of Copenhagen](https://en.itu.dk/). 
+
+Please read full report in [Automated Segmentation of CMB](JorgedelPozoLerida_ResearchProject_AutomatedSegmentationofCMB.pdf)
 
 ## Abstract
 Cerebral Microbleeds (CMBs) are crucial neuroimaging biomarkers associated with medical conditions such as stroke, intracranial hemorrhage, and cerebral small vessel disease. They are detectable as hypointensities on magnetic resonance images (MRI) in T2*-weighted or susceptibility-weighted sequences. 
