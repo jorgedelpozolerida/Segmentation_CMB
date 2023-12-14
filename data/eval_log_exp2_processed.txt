@@ -1,0 +1,808 @@
+1702487516458 jorge-gram info ClearML Task: created new task id=b71d886a0d4b42fbb21c8efa2dcd5c12
+ClearML results page: https://130.61.76.150:8080/projects/6b7c41ee8a4040f2ab35e09b02bbccde/experiments/b71d886a0d4b42fbb21c8efa2dcd5c12/output/log
+1702487517542 jorge-gram error 2023-12-13 18:11:57 WARNING  Git repository is not clean. Consider committing changes before running a ClearML task
+2023-12-13 18:11:57 INFO     Converting all Path objects in config to relative strings.
+2023-12-13 18:11:57 INFO     Submitting task to remote worker queue single-gpu.
+1702487519013 jorge-gram info ClearML Monitor: GPU monitoring failed getting GPU reading, switching off GPU monitoring
+1702487529331 cerebriu-research-bm48gpu-instance-2:gpu5 INFO task b71d886a0d4b42fbb21c8efa2dcd5c12 pulled from b94f6b05a58940f48b30e9bf09fd411b by worker cerebriu-research-bm48gpu-instance-2:gpu5
+
+1702487534511 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG InsecureRequestWarning: Certificate verification is disabled! Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+InsecureRequestWarning: Certificate verification is disabled! Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+Current configuration (clearml_agent v1.5.2, location: /tmp/.clearml_agent.82aoaavl.cfg):
+----------------------
+agent.worker_id = cerebriu-research-bm48gpu-instance-2:gpu5
+agent.worker_name = cerebriu-research-bm48gpu-instance-2
+agent.force_git_ssh_protocol = false
+agent.python_binary = 
+agent.package_manager.type = pip
+agent.package_manager.pip_version.0 = <20.2 ; python_version < '3.10'
+agent.package_manager.pip_version.1 = <22.3 ; python_version >\= '3.10'
+agent.package_manager.system_site_packages = false
+agent.package_manager.force_upgrade = false
+agent.package_manager.conda_channels.0 = pytorch
+agent.package_manager.conda_channels.1 = conda-forge
+agent.package_manager.conda_channels.2 = defaults
+agent.package_manager.priority_optional_packages.0 = pygobject
+agent.package_manager.torch_nightly = false
+agent.package_manager.poetry_files_from_repo_working_dir = false
+agent.venvs_dir = /4_datadrive/clearml/venvs-builds.6
+agent.venvs_cache.max_entries = 10
+agent.venvs_cache.free_space_threshold_gb = 2.0
+agent.venvs_cache.path = /4_datadrive/clearml/venvs-cache
+agent.vcs_cache.enabled = true
+agent.vcs_cache.path = /4_datadrive/clearml/vcs-cache
+agent.venv_update.enabled = false
+agent.pip_download_cache.enabled = true
+agent.pip_download_cache.path = /4_datadrive/clearml/pip-download-cache
+agent.translate_ssh = true
+agent.reload_config = false
+agent.docker_pip_cache = /4_datadrive/clearml/pip-cache
+agent.docker_apt_cache = /4_datadrive/clearml/apt-cache.6
+agent.docker_force_pull = false
+agent.default_docker.image = nvidia/cuda:11.0.3-cudnn8-runtime-ubuntu20.04
+agent.enable_task_env = false
+agent.hide_docker_command_env_vars.enabled = true
+agent.hide_docker_command_env_vars.parse_embedded_urls = true
+agent.abort_callback_max_timeout = 1800
+agent.docker_internal_mounts.sdk_cache = /clearml_agent_cache
+agent.docker_internal_mounts.apt_cache = /var/cache/apt/archives
+agent.docker_internal_mounts.ssh_folder = ~/.ssh
+agent.docker_internal_mounts.ssh_ro_folder = /.ssh
+agent.docker_internal_mounts.pip_cache = /root/.cache/pip
+agent.docker_internal_mounts.poetry_cache = /root/.cache/pypoetry
+agent.docker_internal_mounts.vcs_cache = /root/.clearml/vcs-cache
+agent.docker_internal_mounts.venv_build = ~/.clearml/venvs-builds
+agent.docker_internal_mounts.pip_download = /root/.clearml/pip-download-cache
+agent.apply_environment = true
+agent.apply_files = true
+agent.custom_build_script = 
+agent.disable_task_docker_override = false
+agent.git_user = perslev
+agent.default_python = 3.11
+agent.cuda_version = 114
+agent.cudnn_version = 0
+api.version = 1.5
+api.verify_certificate = false
+api.default_version = 1.5
+api.http.max_req_size = 15728640
+api.http.retries.total = 240
+api.http.retries.connect = 240
+api.http.retries.read = 240
+api.http.retries.redirect = 240
+api.http.retries.status = 240
+api.http.retries.backoff_factor = 1.0
+api.http.retries.backoff_max = 120.0
+api.http.wait_on_mainte'nan'ce_forever = true
+api.http.pool_maxsize = 512
+api.http.pool_connections = 512
+api.api_server = https://130.61.76.150:8008
+api.web_server = https://130.61.76.150:8080
+api.files_server = s3://cerebriu-research-mlops/clearml/mlops-server
+api.credentials.access_key = LA1XBPKXZJ7Q46QYXSL7
+api.host = https://130.61.76.150:8008
+sdk.storage.cache.default_base_dir = /4_datadrive/clearml/cache
+sdk.storage.cache.size.min_free_bytes = 10GB
+sdk.storage.direct_access.0.url = file://*
+sdk.metrics.file_history_size = 100
+sdk.metrics.matplotlib_untitled_history_size = 100
+sdk.metrics.images.format = JPEG
+sdk.metrics.images.quality = 87
+sdk.metrics.images.subsampling = 0
+sdk.metrics.tensorboard_single_series_per_graph = false
+sdk.network.metrics.file_upload_threads = 4
+sdk.network.metrics.file_upload_starvation_warning_sec = 120
+sdk.network.iteration.max_retries_on_server_error = 5
+sdk.network.iteration.retry_backoff_factor_sec = 10
+sdk.network.file_upload_retries = 3
+sdk.aws.s3.key = 
+sdk.aws.s3.region = 
+sdk.aws.s3.credentials.0.bucket = cerebriu-research-mlops
+sdk.aws.s3.credentials.0.region = eu-west-1
+sdk.aws.s3.credentials.0.key = AKIAYLVE23TZC2PWO4W2
+sdk.aws.s3.use_credentials_chain = false
+sdk.aws.boto3.pool_connections = 512
+sdk.aws.boto3.max_multipart_concurrency = 16
+sdk.log.null_log_propagate = false
+sdk.log.task_log_buffer_capacity = 66
+sdk.log.disable_urllib3_info = true
+sdk.development.task_reuse_time_window_in_hours = 72.0
+sdk.development.vcs_repo_detect_async = true
+sdk.development.store_uncommitted_code_diff = true
+sdk.development.support_stopping = true
+sdk.development.default_output_uri = 
+sdk.development.force_analyze_entire_repo = false
+sdk.development.suppress_update_message = false
+sdk.development.detect_with_pip_freeze = false
+sdk.development.worker.report_period_sec = 2
+sdk.development.worker.ping_period_sec = 30
+sdk.development.worker.log_stdout = true
+sdk.development.worker.report_global_mem_used = false
+sdk.development.worker.report_event_flush_threshold = 100
+sdk.development.worker.console_cr_flush_period = 10
+sdk.apply_environment = false
+sdk.apply_files = false
+
+Executing task id [b71d886a0d4b42fbb21c8efa2dcd5c12]:
+repository = https://bitbucket.org/cerebriu/cerebriu-research-mlops.git
+branch = jorge_dev
+version_num = 78c411c9b9d76fcc002981ee4453338aa2f17644
+tag = 
+docker_cmd = 
+entry_point = crbr/commands/main.py
+working_dir = 
+
+
+1702487539551 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG ::: Using Cached environment /4_datadrive/clearml/venvs-cache/9a17d334f9d2c6a8f673d6031acb1c59.d45459cec2442ebeb98213e970574604 :::
+Using cached repository in "/4_datadrive/clearml/vcs-cache/cerebriu-research-mlops.git.e69699c1df6f90b3005442a9cd39f36c/cerebriu-research-mlops.git"
+Note: switching to '78c411c9b9d76fcc002981ee4453338aa2f17644'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 78c411c Merge remote-tracking branch 'origin/dev' into jorge_dev
+type: git
+url: https://bitbucket.org/cerebriu/cerebriu-research-mlops.git
+branch: HEAD
+commit: 78c411c9b9d76fcc002981ee4453338aa2f17644
+root: /4_datadrive/clearml/venvs-builds.6/3.11/task_repository/cerebriu-research-mlops.git
+Applying uncommitted changes
+Executing: ('git', 'apply', '--unidiff-zero'): b'<stdin>:36: trailing whitespace.\n            that overlap with at least \'min_overlap_voxels\' voxels to a true foreground connected \n<stdin>:120: trailing whitespace.\n    """ \n<stdin>:121: trailing whitespace.\n    Accumulated counts evaluation class. This class accumulates counts of \n<stdin>:329: trailing whitespace.\n    \nwarning: 4 lines add whitespace errors.\n'
+
+
+Adding venv into cache: /4_datadrive/clearml/venvs-builds.6/3.11
+Running task id [b71d886a0d4b42fbb21c8efa2dcd5c12]:
+[.]$ /4_datadrive/clearml/venvs-builds.6/3.11/bin/python -u crbr/commands/main.py
+Summary - installed python packages:
+pip:
+- absl-py==2.0.0
+- antlr4-python3-runtime==4.9.3
+- astunparse==1.6.3
+- attrs==23.1.0
+- bcrypt==4.0.1
+- boto3==1.28.79
+- botocore==1.31.85
+- cachetools==5.3.2
+- certifi==2023.11.17
+- charset-normalizer==3.3.2
+- clearml==1.13.1
+- contourpy==1.2.0
+- cycler==0.12.1
+- Cython==3.0.6
+- dipy==1.7.0
+- flatbuffers==23.5.26
+- fonttools==4.46.0
+- furl==2.1.3
+- gast==0.5.4
+- gitdb==4.0.11
+- GitPython==3.1.40
+- google-auth==2.24.0
+- google-auth-oauthlib==1.0.0
+- google-pasta==0.2.0
+- grpcio==1.59.3
+- h5py==3.10.0
+- idna==3.6
+- imageio==2.33.0
+- jmespath==1.0.1
+- joblib==1.3.2
+- jsonschema==4.20.0
+- jsonschema-specifications==2023.11.2
+- keras==2.14.0
+- kiwisolver==1.4.5
+- lazy_loader==0.3
+- libclang==16.0.6
+- lxml==4.9.3
+- Markdown==3.5.1
+- MarkupSafe==2.1.3
+- matplotlib==3.8.1
+- ml-dtypes==0.2.0
+- networkx==3.2.1
+- nibabel==5.1.0
+- nilearn==0.10.2
+- numpy==1.26.2
+- oauthlib==3.2.2
+- omegaconf==2.3.0
+- opt-einsum==3.3.0
+- orderedmultidict==1.0.1
+- packaging==23.2
+- pandas==2.1.3
+- pathlib2==2.3.7.post1
+- Pillow==10.1.0
+- protobuf==4.25.1
+- psutil==5.9.6
+- pyasn1==0.5.1
+- pyasn1-modules==0.3.0
+- PyJWT==2.4.0
+- pyparsing==3.1.1
+- python-dateutil==2.8.2
+- pytz==2023.3.post1
+- PyYAML==6.0.1
+- referencing==0.31.1
+- requests==2.31.0
+- requests-oauthlib==1.3.1
+- rpds-py==0.13.2
+- rsa==4.9
+- s3transfer==0.7.0
+- scikit-image==0.22.0
+- scikit-learn==1.3.2
+- scipy==1.11.3
+- SimpleITK==2.2.1
+- six==1.16.0
+- smmap==5.0.1
+- tensorboard==2.14.1
+- tensorboard-data-server==0.7.2
+- tensorflow==2.14.0
+- tensorflow-estimator==2.14.0
+- tensorflow-io-gcs-filesystem==0.34.0
+- termcolor==2.4.0
+- threadpoolctl==3.2.0
+- tifffile==2023.9.26
+- tqdm==4.66.1
+- typing_extensions==4.8.0
+- tzdata==2023.3
+- urllib3==2.0.7
+- Werkzeug==3.0.1
+- wrapt==1.14.1
+
+Environment setup completed successfully
+
+Starting Task Execution:
+
+2023-12-13 17:12:18.725798: E tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:9342] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2023-12-13 17:12:18.725872: E tensorflow/compiler/xla/stream_executor/cuda/cuda_fft.cc:609] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2023-12-13 17:12:18.725895: E tensorflow/compiler/xla/stream_executor/cuda/cuda_blas.cc:1518] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2023-12-13 17:12:18.732223: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+
+1702487544507 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:12:19.440423: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2023-12-13 17:12:20 WARNING  InsecureRequestWarning: Certificate verification is disabled! Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+ClearML results page: https://130.61.76.150:8080/projects/6b7c41ee8a4040f2ab35e09b02bbccde/experiments/b71d886a0d4b42fbb21c8efa2dcd5c12/output/log
+2023-12-13 17:12:20 INFO     Running task b71d886a0d4b42fbb21c8efa2dcd5c12 remotely.
+2023-12-13 17:12:20 INFO     Fetching config 'args' from ClearML Task 'b71d886a0d4b42fbb21c8efa2dcd5c12'.
+2023-12-13 17:12:20 INFO     Read config 'args' from ClearML task.
+2023-12-13 17:12:20 INFO     Fetching config 'evaluation' from ClearML Task 'b71d886a0d4b42fbb21c8efa2dcd5c12'.
+2023-12-13 17:12:20 INFO     Read config 'evaluation' from ClearML task.
+2023-12-13 17:12:20 INFO     Fetching config 'experiment' from ClearML Task 'b71d886a0d4b42fbb21c8efa2dcd5c12'.
+2023-12-13 17:12:20 INFO     Read config 'experiment' from ClearML task.
+2023-12-13 17:12:20 INFO     Running with ClearML mode: 'remote'
+2023-12-13 17:12:20 INFO     Parsed arguments: {'add_evaluations_to_model': False, 'clearml_mode': 'remote', 'command': 'evaluate', 'dataset_id': '86485852980d44f49b059567b397f121', 'evaluations': ['segmentation', 'accumulated_segmentation', 'classification', 'accumulated_classification', 'counts', 'accumulated_counts'], 'local_run_dir': None, 'log_level': 'INFO', 'model_id': '92dd91ce3dc945699548371834802e49', 'prediction_task_id': '86c7d5dd58ad4482953b45db747a3487', 'project_folder': '.', 'project_name': 'CMB/3Dunet', 'seed': 42, 'splits': ['valid'], 'splits_file': 'splits.json', 'study_folders_pattern': '*', 'tags': ['eval-split', 'patch80'], 'task_description': None, 'task_name': 'valdo-3Dunet-eval', 'tf_min_log_level': '2', 'worker_queue_name': 'single-gpu'}
+2023-12-13 17:12:20 INFO     Setting global seed to 42
+2023-12-13 17:12:20 INFO     Importing module 'crbr.commands.evaluate'
+2023-12-13 17:12:21 INFO     Running command: evaluate in module crbr.commands.evaluate (task=b71d886a0d4b42fbb21c8efa2dcd5c12) from dir /tmp/tmpo0mj2oxi/CMB/3Dunet/valdo-3Dunet-eval
+2023-12-13 17:12:21 INFO     Setting task b71d886a0d4b42fbb21c8efa2dcd5c12 type to 'testing'
+2023-12-13 17:12:21 INFO     Prediction task 86c7d5dd58ad4482953b45db747a3487 has 1 prediction artefact(s).
+2023-12-13 17:12:21 INFO     Found prediction artefact with model_id 92dd91ce3dc945699548371834802e49 and dataset_id 86485852980d44f49b059567b397f121. Running evaluation now.
+2023-12-13 17:12:21 INFO     Stotred local copy of artefact 'prediction-92dd91ce3dc945699548371834802e49-86485852980d44f49b059567b397f121-valid' in folder '/4_datadrive/clearml/cache/storage_manager/global/875b22d1081499cb1f81b5f927e1ad52.valdo-3Dunet-pred_artifacts_archive_prediction-92dd91ce3dc945699548371834802e49-86485852980d44f49b059567b397f121-valid'
+2023-12-13 17:12:21,886 - clearml - INFO - Dataset.get() did not specify alias. Dataset information will not be automatically logged in ClearML Server.
+2023-12-13 17:12:22 INFO     Dataset not locally available. Attempting to automatically download.
+2023-12-13 17:12:22 INFO     Fetching dataset: [ID=None, name='VALDO', version=2] from ClearML
+2023-12-13 17:12:22 INFO     Dataset has tags: ['T2S-space', 'isotropic=0.5', 'nifty', 'processed']
+2023-12-13 17:12:22 INFO     Dataset is not zipped. Leaving in as-is in default ClearML cache.
+2023-12-13 17:12:22 INFO     Dataset downloaded to /4_datadrive/clearml/cache/storage_manager/datasets/ds_86485852980d44f49b059567b397f121
+2023-12-13 17:12:22 INFO     Found 72 study folders.
+2023-12-13 17:12:22 INFO     Loading splits from file /4_datadrive/clearml/cache/storage_manager/datasets/ds_86485852980d44f49b059567b397f121/splits.json
+2023-12-13 17:12:22 INFO     Skipping split train.
+2023-12-13 17:12:22 INFO     Creating dataset for split valid with 22 studies.
+2023-12-13 17:12:22 INFO     Loaded dataset split valid with 22 samples.
+2023-12-13 17:12:22 INFO     Loaded dataset with 1 splits: {'valid': MRIStudyDataset(len(mri_study_configs)=22, load_sequence_spec=SequenceSpec(T2S), metadata=False, transform=False)}
+2023-12-13 17:12:22 INFO     Initialized running evaluation for split 'valid' (dataset MRIStudyDataset(len(mri_study_configs)=22, load_sequence_spec=SequenceSpec(T2S), metadata=False, transform=False))
+2023-12-13 17:12:22 INFO     Found 22 prediction files for 22 studies.
+2023-12-13 17:12:22 INFO     Getting segmentation to classification converter pixel_count with kwargs {'n_classes': 2, 'conversion_map': None}
+2023-12-13 17:12:22 INFO     Using pixel thresholds: {1: 1}
+2023-12-13 17:12:22 INFO     Using segmentation -> classification converter: PixelCountSegmentationToClassificationConverter({'conversion_map': None, 'num_pixels_thresholds': {1: 1}, 'negative_class_index': 0, 'max_class_in_map': 1, 'n_classes': 2})
+2023-12-13 17:12:22 INFO     Evaluating 22 predictions with 6 evaluation(s):
+                             - SegmentationEvaluation({'zero_division': 'nan', 'ignore_classes_in_avg': (0,)})
+                             - AccumulatedSegmentationEvaluation({'zero_division': 'nan', 'ignore_classes_in_avg': (0,)})
+                             - ClassificationEvaluation({})
+                             - AcccumulatedClassificationEvaluation({})
+                             - CountsEvaluation({'label_structure': array([[[ True,  True,  True],
+                                     [ True,  True,  True],
+                                     [ True,  True,  True]],
+                             
+                                    [[ True,  True,  True],
+                                     [ True,  True,  True],
+                                     [ True,  True,  True]],
+                             
+                                    [[ True,  True,  True],
+                                     [ True,  True,  True],
+                                     [ True,  True,  True]]]), 'min_overlap_voxels': 1})
+                             - AccumulatedCountsEvaluation({'label_structure': array([[[ True,  True,  True],
+                                     [ True,  True,  True],
+                                     [ True,  True,  True]],
+                             
+                                    [[ True,  True,  True],
+                                     [ True,  True,  True],
+                                     [ True,  True,  True]],
+                             
+                                    [[ True,  True,  True],
+                                     [ True,  True,  True],
+                                     [ True,  True,  True]]]), 'min_overlap_voxels': 1})
+
+1702487549472 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:12:25 INFO     [1/22] Evaluating study sub-104.
+
+1702487554514 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:12:33 INFO     Study evaluation:
+                             {'classification': {0:'FN',
+                                                 1:'FP'},
+                              'counts': {'predicted_counts': [8],
+                                         'predicted_overlapping_counts': [0],
+                                         'true_counts': [0]},
+                              'segmentation': {'f1_0': 0.9999970669901701,
+                                               'f1_1': 0.0,
+                                               'f1_avg': 0.0,
+                                               'precision_0': 1.0,
+                                               'precision_1': 0.0,
+                                               'precision_avg': 0.0,
+                                               'recall_0': 0.9999941339975453,
+                                               'recall_1': 'nan',
+                                               'recall_avg': 'nan',
+                                               'specificity_0': 'nan',
+                                               'specificity_1': 0.9999941339975453,
+                                               'specificity_avg': 0.9999941339975453}}
+
+1702487559524 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:12:35 INFO     [2/22] Evaluating study sub-106.
+
+1702487569576 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:12:44 INFO     Study evaluation:
+                             {'classification': {0:'TN',
+                                                 1:'TP'},
+                              'counts': {'predicted_counts': [23],
+                                         'predicted_overlapping_counts': [1],
+                                         'true_counts': [3]},
+                              'segmentation': {'f1_0': 0.9999802446008403,
+                                               'f1_1': 0.09917355371900827,
+                                               'f1_avg': 0.09917355371900827,
+                                               'precision_0': 0.9999931127079962,
+                                               'precision_1': 0.0625,
+                                               'precision_avg': 0.0625,
+                                               'recall_0': 0.9999673768248588,
+                                               'recall_1': 0.24,
+                                               'recall_avg': 0.24,
+                                               'specificity_0': 0.24,
+                                               'specificity_1': 0.9999673768248588,
+                                               'specificity_avg': 0.9999673768248588}}
+2023-12-13 17:12:47 INFO     [3/22] Evaluating study sub-202.
+
+1702487579610 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:12:56 INFO     Study evaluation:
+                             {'classification': {0:'FN',
+                                                 1:'FP'},
+                              'counts': {'predicted_counts': [1],
+                                         'predicted_overlapping_counts': [0],
+                                         'true_counts': [0]},
+                              'segmentation': {'f1_0': 0.9999981716059918,
+                                               'f1_1': 0.0,
+                                               'f1_avg': 0.0,
+                                               'precision_0': 1.0,
+                                               'precision_1': 0.0,
+                                               'precision_avg': 0.0,
+                                               'recall_0': 0.9999963432186697,
+                                               'recall_1': 'nan',
+                                               'recall_avg': 'nan',
+                                               'specificity_0': 'nan',
+                                               'specificity_1': 0.9999963432186697,
+                                               'specificity_avg': 0.9999963432186697}}
+2023-12-13 17:12:58 INFO     [4/22] Evaluating study sub-204.
+
+1702487589644 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:13:05 INFO     Study evaluation:
+                             {'classification': {0:'FN',
+                                                 1:'FP'},
+                              'counts': {'predicted_counts': [1],
+                                         'predicted_overlapping_counts': [0],
+                                         'true_counts': [0]},
+                              'segmentation': {'f1_0': 0.9999999393136532,
+                                               'f1_1': 0.0,
+                                               'f1_avg': 0.0,
+                                               'precision_0': 1.0,
+                                               'precision_1': 0.0,
+                                               'precision_avg': 0.0,
+                                               'recall_0': 0.9999998786273138,
+                                               'recall_1': 'nan',
+                                               'recall_avg': 'nan',
+                                               'specificity_0': 'nan',
+                                               'specificity_1': 0.9999998786273138,
+                                               'specificity_avg': 0.9999998786273138}}
+2023-12-13 17:13:07 INFO     [5/22] Evaluating study sub-206.
+
+1702487599685 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:13:15 INFO     Study evaluation:
+                             {'classification': {0:'FN',
+                                                 1:'FP'},
+                              'counts': {'predicted_counts': [3],
+                                         'predicted_overlapping_counts': [0],
+                                         'true_counts': [0]},
+                              'segmentation': {'f1_0': 0.9999981142205818,
+                                               'f1_1': 0.0,
+                                               'f1_avg': 0.0,
+                                               'precision_0': 1.0,
+                                               'precision_1': 0.0,
+                                               'precision_avg': 0.0,
+                                               'recall_0': 0.9999962284482758,
+                                               'recall_1': 'nan',
+                                               'recall_avg': 'nan',
+                                               'specificity_0': 'nan',
+                                               'specificity_1': 0.9999962284482758,
+                                               'specificity_avg': 0.9999962284482758}}
+2023-12-13 17:13:17 INFO     [6/22] Evaluating study sub-208.
+
+1702487609717 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:13:25 INFO     Study evaluation:
+                             {'classification': {0:'TN',
+                                                 1:'TP'},
+                              'counts': {'predicted_counts': [2],
+                                         'predicted_overlapping_counts': [1],
+                                         'true_counts': [1]},
+                              'segmentation': {'f1_0': 0.9999988154194258,
+                                               'f1_1': 0.7407407407407407,
+                                               'f1_avg': 0.7407407407407407,
+                                               'precision_0': 0.999999398307929,
+                                               'precision_1': 0.656934306569343,
+                                               'precision_avg': 0.656934306569343,
+                                               'recall_0': 0.9999982325316021,
+                                               'recall_1': 0.8490566037735849,
+                                               'recall_avg': 0.8490566037735849,
+                                               'specificity_0': 0.8490566037735849,
+                                               'specificity_1': 0.9999982325316021,
+                                               'specificity_avg': 0.9999982325316021}}
+2023-12-13 17:13:28 INFO     [7/22] Evaluating study sub-213.
+
+1702487619751 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:13:36 INFO     Study evaluation:
+                             {'classification': {0:'FP',
+                                                 1:'FN'},
+                              'counts': {'predicted_counts': [0],
+                                         'predicted_overlapping_counts': [0],
+                                         'true_counts': [1]},
+                              'segmentation': {'f1_0': 0.9999995496343707,
+                                               'f1_1': 0.0,
+                                               'f1_avg': 0.0,
+                                               'precision_0': 0.999999099269147,
+                                               'precision_1': 'nan',
+                                               'precision_avg': 'nan',
+                                               'recall_0': 1.0,
+                                               'recall_1': 0.0,
+                                               'recall_avg': 0.0,
+                                               'specificity_0': 0.0,
+                                               'specificity_1': 1.0,
+                                               'specificity_avg': 1.0}}
+2023-12-13 17:13:39 INFO     [8/22] Evaluating study sub-214.
+
+1702487629781 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:13:48 INFO     Study evaluation:
+                             {'classification': {0:'FN',
+                                                 1:'FP'},
+                              'counts': {'predicted_counts': [4],
+                                         'predicted_overlapping_counts': [0],
+                                         'true_counts': [0]},
+                              'segmentation': {'f1_0': 0.9999990957813097,
+                                               'f1_1': 0.0,
+                                               'f1_avg': 0.0,
+                                               'precision_0': 1.0,
+                                               'precision_1': 0.0,
+                                               'precision_avg': 0.0,
+                                               'recall_0': 0.9999981915642546,
+                                               'recall_1': 'nan',
+                                               'recall_avg': 'nan',
+                                               'specificity_0': 'nan',
+                                               'specificity_1': 0.9999981915642546,
+                                               'specificity_avg': 0.9999981915642546}}
+
+1702487634787 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:13:50 INFO     [9/22] Evaluating study sub-217.
+
+1702487639828 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:13:58 INFO     Study evaluation:
+                             {'classification': {0:'FP',
+                                                 1:'FN'},
+                              'counts': {'predicted_counts': [0],
+                                         'predicted_overlapping_counts': [0],
+                                         'true_counts': [1]},
+                              'segmentation': {'f1_0': 0.9999969951593609,
+                                               'f1_1': 0.0,
+                                               'f1_avg': 0.0,
+                                               'precision_0': 0.9999939903367799,
+                                               'precision_1': 'nan',
+                                               'precision_avg': 'nan',
+                                               'recall_0': 1.0,
+                                               'recall_1': 0.0,
+                                               'recall_avg': 0.0,
+                                               'specificity_0': 0.0,
+                                               'specificity_1': 1.0,
+                                               'specificity_avg': 1.0}}
+
+1702487644838 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:14:01 INFO     [10/22] Evaluating study sub-219.
+
+1702487654911 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:14:10 INFO     Study evaluation:
+                             {'classification': {0:'TP',
+                                                 1:'TN'},
+                              'counts': {'predicted_counts': [0],
+                                         'predicted_overlapping_counts': [0],
+                                         'true_counts': [0]},
+                              'segmentation': {'f1_0': 1.0,
+                                               'f1_1': 'nan',
+                                               'f1_avg': 'nan',
+                                               'precision_0': 1.0,
+                                               'precision_1': 'nan',
+                                               'precision_avg': 'nan',
+                                               'recall_0': 1.0,
+                                               'recall_1': 'nan',
+                                               'recall_avg': 'nan',
+                                               'specificity_0': 'nan',
+                                               'specificity_1': 1.0,
+                                               'specificity_avg': 1.0}}
+2023-12-13 17:14:12 INFO     [11/22] Evaluating study sub-221.
+
+1702487664942 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:14:23 INFO     Study evaluation:
+                             {'classification': {0:'TN',
+                                                 1:'TP'},
+                              'counts': {'predicted_counts': [23],
+                                         'predicted_overlapping_counts': [11],
+                                         'true_counts': [11]},
+                              'segmentation': {'f1_0': 0.9999845683803208,
+                                               'f1_1': 0.562879850397382,
+                                               'f1_avg': 0.562879850397382,
+                                               'precision_0': 0.9999951476532797,
+                                               'precision_1': 0.4330935251798561,
+                                               'precision_avg': 0.4330935251798561,
+                                               'recall_0': 0.9999739893312026,
+                                               'recall_1': 0.8037383177570093,
+                                               'recall_avg': 0.8037383177570093,
+                                               'specificity_0': 0.8037383177570093,
+                                               'specificity_1': 0.9999739893312026,
+                                               'specificity_avg': 0.9999739893312026}}
+
+1702487669950 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:14:25 INFO     [12/22] Evaluating study sub-222.
+
+1702487680001 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:14:35 INFO     Study evaluation:
+                             {'classification': {0:'TN',
+                                                 1:'TP'},
+                              'counts': {'predicted_counts': [22],
+                                         'predicted_overlapping_counts': [8],
+                                         'true_counts': [11]},
+                              'segmentation': {'f1_0': 0.9999815427890342,
+                                               'f1_1': 0.3142677561282212,
+                                               'f1_avg': 0.3142677561282212,
+                                               'precision_0': 0.9999837589717724,
+                                               'precision_1': 0.29036004645760743,
+                                               'precision_avg': 0.29036004645760743,
+                                               'recall_0': 0.999979326616119,
+                                               'recall_1': 0.3424657534246575,
+                                               'recall_avg': 0.3424657534246575,
+                                               'specificity_0': 0.3424657534246575,
+                                               'specificity_1': 0.999979326616119,
+                                               'specificity_avg': 0.999979326616119}}
+2023-12-13 17:14:38 INFO     [13/22] Evaluating study sub-226.
+
+1702487685026 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:14:44 INFO     Study evaluation:
+                             {'classification': {0:'TP',
+                                                 1:'TN'},
+                              'counts': {'predicted_counts': [0],
+                                         'predicted_overlapping_counts': [0],
+                                         'true_counts': [0]},
+                              'segmentation': {'f1_0': 1.0,
+                                               'f1_1': 'nan',
+                                               'f1_avg': 'nan',
+                                               'precision_0': 1.0,
+                                               'precision_1': 'nan',
+                                               'precision_avg': 'nan',
+                                               'recall_0': 1.0,
+                                               'recall_1': 'nan',
+                                               'recall_avg': 'nan',
+                                               'specificity_0': 'nan',
+                                               'specificity_1': 1.0,
+                                               'specificity_avg': 1.0}}
+
+1702487690033 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:14:47 INFO     [14/22] Evaluating study sub-229.
+
+1702487700084 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:14:57 INFO     Study evaluation:
+                             {'classification': {0:'TN',
+                                                 1:'TP'},
+                              'counts': {'predicted_counts': [2],
+                                         'predicted_overlapping_counts': [1],
+                                         'true_counts': [1]},
+                              'segmentation': {'f1_0': 0.9999986991278875,
+                                               'f1_1': 0.366412213740458,
+                                               'f1_avg': 0.366412213740458,
+                                               'precision_0': 0.9999998746145887,
+                                               'precision_1': 0.23300970873786409,
+                                               'precision_avg': 0.23300970873786409,
+                                               'recall_0': 0.9999975236439498,
+                                               'recall_1': 0.8571428571428571,
+                                               'recall_avg': 0.8571428571428571,
+                                               'specificity_0': 0.8571428571428571,
+                                               'specificity_1': 0.9999975236439498,
+                                               'specificity_avg': 0.9999975236439498}}
+2023-12-13 17:14:59 INFO     [15/22] Evaluating study sub-232.
+
+1702487710116 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:15:07 INFO     Study evaluation:
+                             {'classification': {0:'TN',
+                                                 1:'TP'},
+                              'counts': {'predicted_counts': [1],
+                                         'predicted_overlapping_counts': [1],
+                                         'true_counts': [1]},
+                              'segmentation': {'f1_0': 0.9999995103193633,
+                                               'f1_1': 0.6987951807228916,
+                                               'f1_avg': 0.6987951807228916,
+                                               'precision_0': 0.9999994123832935,
+                                               'precision_1': 0.7435897435897436,
+                                               'precision_avg': 0.7435897435897436,
+                                               'recall_0': 0.9999996082554522,
+                                               'recall_1': 0.6590909090909091,
+                                               'recall_avg': 0.6590909090909091,
+                                               'specificity_0': 0.6590909090909091,
+                                               'specificity_1': 0.9999996082554522,
+                                               'specificity_avg': 0.9999996082554522}}
+
+1702487715135 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:15:10 INFO     [16/22] Evaluating study sub-302.
+
+1702487720174 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:15:19 INFO     Study evaluation:
+                             {'classification': {0:'TN',
+                                                 1:'TP'},
+                              'counts': {'predicted_counts': [20],
+                                         'predicted_overlapping_counts': [1],
+                                         'true_counts': [1]},
+                              'segmentation': {'f1_0': 0.9999804843073087,
+                                               'f1_1': 0.44053333333333333,
+                                               'f1_avg': 0.44053333333333333,
+                                               'precision_0': 0.9999903629850516,
+                                               'precision_1': 0.343308395677473,
+                                               'precision_avg': 0.343308395677473,
+                                               'recall_0': 0.9999706058247423,
+                                               'recall_1': 0.6145833333333334,
+                                               'recall_avg': 0.6145833333333334,
+                                               'specificity_0': 0.6145833333333334,
+                                               'specificity_1': 0.9999706058247423,
+                                               'specificity_avg': 0.9999706058247423}}
+
+1702487725185 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:15:22 INFO     [17/22] Evaluating study sub-303.
+ClearML Monitor: Could not detect iteration reporting, falling back to iterations as seconds-from-start
+
+1702487735236 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:15:33 INFO     Study evaluation:
+                             {'classification': {0:'TN',
+                                                 1:'TP'},
+                              'counts': {'predicted_counts': [11],
+                                         'predicted_overlapping_counts': [1],
+                                         'true_counts': [1]},
+                              'segmentation': {'f1_0': 0.9999897322063246,
+                                               'f1_1': 0.1266490765171504,
+                                               'f1_avg': 0.1266490765171504,
+                                               'precision_0': 0.9999984799809929,
+                                               'precision_1': 0.07261724659606657,
+                                               'precision_avg': 0.07261724659606657,
+                                               'recall_0': 0.9999809845847022,
+                                               'recall_1': 0.4948453608247423,
+                                               'recall_avg': 0.4948453608247423,
+                                               'specificity_0': 0.4948453608247423,
+                                               'specificity_1': 0.9999809845847022,
+                                               'specificity_avg': 0.9999809845847022}}
+
+1702487740244 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:15:36 INFO     [18/22] Evaluating study sub-307.
+
+1702487745285 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:15:44 INFO     Study evaluation:
+                             {'classification': {0:'TN',
+                                                 1:'TP'},
+                              'counts': {'predicted_counts': [8],
+                                         'predicted_overlapping_counts': [1],
+                                         'true_counts': [1]},
+                              'segmentation': {'f1_0': 0.999993935502525,
+                                               'f1_1': 0.34552845528455284,
+                                               'f1_avg': 0.34552845528455284,
+                                               'precision_0': 0.9999995856531109,
+                                               'precision_1': 0.21464646464646464,
+                                               'precision_avg': 0.21464646464646464,
+                                               'recall_0': 0.9999882854157871,
+                                               'recall_1': 0.8854166666666666,
+                                               'recall_avg': 0.8854166666666666,
+                                               'specificity_0': 0.8854166666666666,
+                                               'specificity_1': 0.9999882854157871,
+                                               'specificity_avg': 0.9999882854157871}}
+
+1702487750300 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:15:47 INFO     [19/22] Evaluating study sub-309.
+
+1702487760352 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:15:56 INFO     Study evaluation:
+                             {'classification': {0:'TN',
+                                                 1:'TP'},
+                              'counts': {'predicted_counts': [15],
+                                         'predicted_overlapping_counts': [1],
+                                         'true_counts': [1]},
+                              'segmentation': {'f1_0': 0.9999753258562023,
+                                               'f1_1': 0.08730691739422432,
+                                               'f1_avg': 0.08730691739422432,
+                                               'precision_0': 0.9999971675860876,
+                                               'precision_1': 0.048291233283803865,
+                                               'precision_avg': 0.048291233283803865,
+                                               'recall_0': 0.9999534850804213,
+                                               'recall_1': 0.45454545454545453,
+                                               'recall_avg': 0.45454545454545453,
+                                               'specificity_0': 0.45454545454545453,
+                                               'specificity_1': 0.9999534850804213,
+                                               'specificity_avg': 0.9999534850804213}}
+2023-12-13 17:16:00 INFO     [20/22] Evaluating study sub-311.
+
+1702487775402 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:16:11 INFO     Study evaluation:
+                             {'classification': {0:'TN',
+                                                 1:'TP'},
+                              'counts': {'predicted_counts': [28],
+                                         'predicted_overlapping_counts': [1],
+                                         'true_counts': [1]},
+                              'segmentation': {'f1_0': 0.9999778844239998,
+                                               'f1_1': 0.4401840490797546,
+                                               'f1_avg': 0.4401840490797546,
+                                               'precision_0': 0.9999963947914249,
+                                               'precision_1': 0.29973890339425585,
+                                               'precision_avg': 0.29973890339425585,
+                                               'recall_0': 0.9999593747418319,
+                                               'recall_1': 0.8282828282828283,
+                                               'recall_avg': 0.8282828282828283,
+                                               'specificity_0': 0.8282828282828283,
+                                               'specificity_1': 0.9999593747418319,
+                                               'specificity_avg': 0.9999593747418319}}
+
+1702487780408 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:16:15 INFO     [21/22] Evaluating study sub-312.
+
+1702487790461 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:16:26 INFO     Study evaluation:
+                             {'classification': {0:'TN',
+                                                 1:'TP'},
+                              'counts': {'predicted_counts': [17],
+                                         'predicted_overlapping_counts': [1],
+                                         'true_counts': [2]},
+                              'segmentation': {'f1_0': 0.9999868637158061,
+                                               'f1_1': 0.15984405458089668,
+                                               'f1_avg': 0.15984405458089668,
+                                               'precision_0': 0.9999966168404478,
+                                               'precision_1': 0.09843937575030012,
+                                               'precision_avg': 0.09843937575030012,
+                                               'recall_0': 0.9999771107814102,
+                                               'recall_1': 0.42487046632124353,
+                                               'recall_avg': 0.42487046632124353,
+                                               'specificity_0': 0.42487046632124353,
+                                               'specificity_1': 0.9999771107814102,
+                                               'specificity_avg': 0.9999771107814102}}
+2023-12-13 17:16:30 INFO     [22/22] Evaluating study sub-314.
+
+1702487805533 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG 2023-12-13 17:16:44 INFO     Study evaluation:
+                             {'classification': {0:'TN',
+                                                 1:'TP'},
+                              'counts': {'predicted_counts': [22],
+                                         'predicted_overlapping_counts': [1],
+                                         'true_counts': [1]},
+                              'segmentation': {'f1_0': 0.999992450231757,
+                                               'f1_1': 0.07441860465116279,
+                                               'f1_avg': 0.07441860465116279,
+                                               'precision_0': 0.9999981536474871,
+                                               'precision_1': 0.043795620437956206,
+                                               'precision_avg': 0.043795620437956206,
+                                               'recall_0': 0.9999867468810846,
+                                               'recall_1': 0.24742268041237114,
+                                               'recall_avg': 0.24742268041237114,
+                                               'specificity_0': 0.24742268041237114,
+                                               'specificity_1': 0.9999867468810846,
+                                               'specificity_avg': 0.9999867468810846}}
+Traceback (most recent call last):
+  File "/4_datadrive/clearml/venvs-builds.6/3.11/task_repository/cerebriu-research-mlops.git/crbr/commands/main.py", line 222, in <module>
+    main()
+  File "/4_datadrive/clearml/venvs-builds.6/3.11/task_repository/cerebriu-research-mlops.git/crbr/commands/main.py", line 218, in main
+    return mod.main(task=task, config=config, local_run_dir=local_run_dir)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/4_datadrive/clearml/venvs-builds.6/3.11/task_repository/cerebriu-research-mlops.git/crbr/utils/config_parsers.py", line 543, in wrapper
+    return func(task, config, local_run_dir, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/4_datadrive/clearml/venvs-builds.6/3.11/task_repository/cerebriu-research-mlops.git/crbr/utils/clearml_utils.py", line 477, in wrapper
+    return func(task, config, local_run_dir, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/4_datadrive/clearml/venvs-builds.6/3.11/task_repository/cerebriu-research-mlops.git/crbr/commands/evaluate.py", line 453, in main
+    evaluate_prediction_artefact(
+  File "/4_datadrive/clearml/venvs-builds.6/3.11/task_repository/cerebriu-research-mlops.git/crbr/commands/evaluate.py", line 352, in evaluate_prediction_artefact
+    evaluation_metrics = run_all_evaluations_on_dataset(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/4_datadrive/clearml/venvs-builds.6/3.11/task_repository/cerebriu-research-mlops.git/crbr/commands/evaluate.py", line 229, in run_all_evaluations_on_dataset
+    add_accumulated_metrics(evaluation_metrics, evaluations, task)
+  File "/4_datadrive/clearml/venvs-builds.6/3.11/task_repository/cerebriu-research-mlops.git/crbr/commands/evaluate.py", line 255, in add_accumulated_metrics
+    evaluation.reset_accumulator()
+  File "/4_datadrive/clearml/venvs-builds.6/3.11/task_repository/cerebriu-research-mlops.git/crbr/evaluation/evaluations/base_evaluation.py", line 191, in reset_accumulator
+    raise NotImplementedError("Must be implemented in subclass")
+NotImplementedError: Must be implemented in subclass
+
+1702487815527 cerebriu-research-bm48gpu-instance-2:gpu5 DEBUG Process failed, exit code 1

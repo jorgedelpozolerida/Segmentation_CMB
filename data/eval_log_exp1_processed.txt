@@ -1,0 +1,781 @@
+1702490725124 jorge-gram info ClearML Task: overwriting (reusing) task id=7974ae1258344c3d9357c22841dd6127
+ClearML results page: https://130.61.76.150:8080/projects/6b7c41ee8a4040f2ab35e09b02bbccde/experiments/7974ae1258344c3d9357c22841dd6127/output/log
+1702490726207 jorge-gram error 2023-12-13 19:05:26 WARNING  Git repository is not clean. Consider committing changes before running a ClearML task
+2023-12-13 19:05:26 INFO     Converting all Path objects in config to relative strings.
+2023-12-13 19:05:26 INFO     Submitting task to remote worker queue single-gpu.
+1702490727692 jorge-gram info ClearML Monitor: GPU monitoring failed getting GPU reading, switching off GPU monitoring
+1702490738417 cerebriu-research-bm48gpu-instance-2:gpu0 INFO task 7974ae1258344c3d9357c22841dd6127 pulled from b94f6b05a58940f48b30e9bf09fd411b by worker cerebriu-research-bm48gpu-instance-2:gpu0
+
+1702490743592 cerebriu-research-bm48gpu-instance-2:gpu0 DEBUG InsecureRequestWarning: Certificate verification is disabled! Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+InsecureRequestWarning: Certificate verification is disabled! Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+Current configuration (clearml_agent v1.5.2, location: /tmp/.clearml_agent.ck604uhi.cfg):
+----------------------
+agent.worker_id = cerebriu-research-bm48gpu-instance-2:gpu0
+agent.worker_name = cerebriu-research-bm48gpu-instance-2
+agent.force_git_ssh_protocol = false
+agent.python_binary = 
+agent.package_manager.type = pip
+agent.package_manager.pip_version.0 = <20.2 ; python_version < '3.10'
+agent.package_manager.pip_version.1 = <22.3 ; python_version \= '3.10'
+agent.package_manager.system_site_packages = false
+agent.package_manager.force_upgrade = false
+agent.package_manager.conda_channels.0 = pytorch
+agent.package_manager.conda_channels.1 = conda-forge
+agent.package_manager.conda_channels.2 = defaults
+agent.package_manager.priority_optional_packages.0 = pygobject
+agent.package_manager.torch_nightly = false
+agent.package_manager.poetry_files_from_repo_working_dir = false
+agent.venvs_dir = /4_datadrive/clearml/venvs-builds.1
+agent.venvs_cache.max_entries = 10
+agent.venvs_cache.free_space_threshold_gb = 2.0
+agent.venvs_cache.path = /4_datadrive/clearml/venvs-cache
+agent.vcs_cache.enabled = true
+agent.vcs_cache.path = /4_datadrive/clearml/vcs-cache
+agent.venv_update.enabled = false
+agent.pip_download_cache.enabled = true
+agent.pip_download_cache.path = /4_datadrive/clearml/pip-download-cache
+agent.translate_ssh = true
+agent.reload_config = false
+agent.docker_pip_cache = /4_datadrive/clearml/pip-cache
+agent.docker_apt_cache = /4_datadrive/clearml/apt-cache.1
+agent.docker_force_pull = false
+agent.default_docker.image = nvidia/cuda:11.0.3-cudnn8-runtime-ubuntu20.04
+agent.enable_task_env = false
+agent.hide_docker_command_env_vars.enabled = true
+agent.hide_docker_command_env_vars.parse_embedded_urls = true
+agent.abort_callback_max_timeout = 1800
+agent.docker_internal_mounts.sdk_cache = /clearml_agent_cache
+agent.docker_internal_mounts.apt_cache = /var/cache/apt/archives
+agent.docker_internal_mounts.ssh_folder = ~/.ssh
+agent.docker_internal_mounts.ssh_ro_folder = /.ssh
+agent.docker_internal_mounts.pip_cache = /root/.cache/pip
+agent.docker_internal_mounts.poetry_cache = /root/.cache/pypoetry
+agent.docker_internal_mounts.vcs_cache = /root/.clearml/vcs-cache
+agent.docker_internal_mounts.venv_build = ~/.clearml/venvs-builds
+agent.docker_internal_mounts.pip_download = /root/.clearml/pip-download-cache
+agent.apply_environment = true
+agent.apply_files = true
+agent.custom_build_script = 
+agent.disable_task_docker_override = false
+agent.git_user = perslev
+agent.default_python = 3.11
+agent.cuda_version = 114
+agent.cudnn_version = 0
+api.version = 1.5
+api.verify_certificate = false
+api.default_version = 1.5
+api.http.max_req_size = 15728640
+api.http.retries.total = 240
+api.http.retries.connect = 240
+api.http.retries.read = 240
+api.http.retries.redirect = 240
+api.http.retries.status = 240
+api.http.retries.backoff_factor = 1.0
+api.http.retries.backoff_max = 120.0
+api.http.wait_on_mainte'nan'ce_forever = true
+api.http.pool_maxsize = 512
+api.http.pool_connections = 512
+api.api_server = https://130.61.76.150:8008
+api.web_server = https://130.61.76.150:8080
+api.files_server = s3://cerebriu-research-mlops/clearml/mlops-server
+api.credentials.access_key = LA1XBPKXZJ7Q46QYXSL7
+api.host = https://130.61.76.150:8008
+sdk.storage.cache.default_base_dir = /4_datadrive/clearml/cache
+sdk.storage.cache.size.min_free_bytes = 10GB
+sdk.storage.direct_access.0.url = file://*
+sdk.metrics.file_history_size = 100
+sdk.metrics.matplotlib_untitled_history_size = 100
+sdk.metrics.images.format = JPEG
+sdk.metrics.images.quality = 87
+sdk.metrics.images.subsampling = 0
+sdk.metrics.tensorboard_single_series_per_graph = false
+sdk.network.metrics.file_upload_threads = 4
+sdk.network.metrics.file_upload_starvation_warning_sec = 120
+sdk.network.iteration.max_retries_on_server_error = 5
+sdk.network.iteration.retry_backoff_factor_sec = 10
+sdk.network.file_upload_retries = 3
+sdk.aws.s3.key = 
+sdk.aws.s3.region = 
+sdk.aws.s3.credentials.0.bucket = cerebriu-research-mlops
+sdk.aws.s3.credentials.0.region = eu-west-1
+sdk.aws.s3.credentials.0.key = AKIAYLVE23TZC2PWO4W2
+sdk.aws.s3.use_credentials_chain = false
+sdk.aws.boto3.pool_connections = 512
+sdk.aws.boto3.max_multipart_concurrency = 16
+sdk.log.null_log_propagate = false
+sdk.log.task_log_buffer_capacity = 66
+sdk.log.disable_urllib3_info = true
+sdk.development.task_reuse_time_window_in_hours = 72.0
+sdk.development.vcs_repo_detect_async = true
+sdk.development.store_uncommitted_code_diff = true
+sdk.development.support_stopping = true
+sdk.development.default_output_uri = 
+sdk.development.force_analyze_entire_repo = false
+sdk.development.suppress_update_message = false
+sdk.development.detect_with_pip_freeze = false
+sdk.development.worker.report_period_sec = 2
+sdk.development.worker.ping_period_sec = 30
+sdk.development.worker.log_stdout = true
+sdk.development.worker.report_global_mem_used = false
+sdk.development.worker.report_event_flush_threshold = 100
+sdk.development.worker.console_cr_flush_period = 10
+sdk.apply_environment = false
+sdk.apply_files = false
+
+Executing task id [7974ae1258344c3d9357c22841dd6127]:
+repository = https://bitbucket.org/cerebriu/cerebriu-research-mlops.git
+branch = jorge_dev
+version_num = 78c411c9b9d76fcc002981ee4453338aa2f17644
+tag = 
+docker_cmd = 
+entry_point = crbr/commands/main.py
+working_dir = 
+
+
+1702490748620 cerebriu-research-bm48gpu-instance-2:gpu0 DEBUG ::: Using Cached environment /4_datadrive/clearml/venvs-cache/9a17d334f9d2c6a8f673d6031acb1c59.d45459cec2442ebeb98213e970574604 :::
+Using cached repository in "/4_datadrive/clearml/vcs-cache/cerebriu-research-mlops.git.e69699c1df6f90b3005442a9cd39f36c/cerebriu-research-mlops.git"
+Note: switching to '78c411c9b9d76fcc002981ee4453338aa2f17644'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 78c411c Merge remote-tracking branch 'origin/dev' into jorge_dev
+type: git
+url: https://bitbucket.org/cerebriu/cerebriu-research-mlops.git
+branch: HEAD
+commit: 78c411c9b9d76fcc002981ee4453338aa2f17644
+root: /4_datadrive/clearml/venvs-builds.1/3.11/task_repository/cerebriu-research-mlops.git
+Applying uncommitted changes
+Executing: ('git', 'apply', '--unidiff-zero'): b'<stdin:36: trailing whitespace.\n            that overlap with at least \'min_overlap_voxels\' voxels to a true foreground connected \n<stdin:120: trailing whitespace.\n    """ \n<stdin:121: trailing whitespace.\n    Accumulated counts evaluation class. This class accumulates counts of \n<stdin:329: trailing whitespace.\n    \nwarning: 4 lines add whitespace errors.\n'
+
+
+Adding venv into cache: /4_datadrive/clearml/venvs-builds.1/3.11
+Running task id [7974ae1258344c3d9357c22841dd6127]:
+[.]$ /4_datadrive/clearml/venvs-builds.1/3.11/bin/python -u crbr/commands/main.py
+Summary - installed python packages:
+pip:
+- absl-py==2.0.0
+- antlr4-python3-runtime==4.9.3
+- astunparse==1.6.3
+- attrs==23.1.0
+- bcrypt==4.0.1
+- boto3==1.28.79
+- botocore==1.31.85
+- cachetools==5.3.2
+- certifi==2023.11.17
+- charset-normalizer==3.3.2
+- clearml==1.13.1
+- contourpy==1.2.0
+- cycler==0.12.1
+- Cython==3.0.6
+- dipy==1.7.0
+- flatbuffers==23.5.26
+- fonttools==4.46.0
+- furl==2.1.3
+- gast==0.5.4
+- gitdb==4.0.11
+- GitPython==3.1.40
+- google-auth==2.24.0
+- google-auth-oauthlib==1.0.0
+- google-pasta==0.2.0
+- grpcio==1.59.3
+- h5py==3.10.0
+- idna==3.6
+- imageio==2.33.0
+- jmespath==1.0.1
+- joblib==1.3.2
+- jsonschema==4.20.0
+- jsonschema-specifications==2023.11.2
+- keras==2.14.0
+- kiwisolver==1.4.5
+- lazy_loader==0.3
+- libclang==16.0.6
+- lxml==4.9.3
+- Markdown==3.5.1
+- MarkupSafe==2.1.3
+- matplotlib==3.8.1
+- ml-dtypes==0.2.0
+- networkx==3.2.1
+- nibabel==5.1.0
+- nilearn==0.10.2
+- numpy==1.26.2
+- oauthlib==3.2.2
+- omegaconf==2.3.0
+- opt-einsum==3.3.0
+- orderedmultidict==1.0.1
+- packaging==23.2
+- pandas==2.1.3
+- pathlib2==2.3.7.post1
+- Pillow==10.1.0
+- protobuf==4.25.1
+- psutil==5.9.6
+- pyasn1==0.5.1
+- pyasn1-modules==0.3.0
+- PyJWT==2.4.0
+- pyparsing==3.1.1
+- python-dateutil==2.8.2
+- pytz==2023.3.post1
+- PyYAML==6.0.1
+- referencing==0.31.1
+- requests==2.31.0
+- requests-oauthlib==1.3.1
+- rpds-py==0.13.2
+- rsa==4.9
+- s3transfer==0.7.0
+- scikit-image==0.22.0
+- scikit-learn==1.3.2
+- scipy==1.11.3
+- SimpleITK==2.2.1
+- six==1.16.0
+- smmap==5.0.1
+- tensorboard==2.14.1
+- tensorboard-data-server==0.7.2
+- tensorflow==2.14.0
+- tensorflow-estimator==2.14.0
+- tensorflow-io-gcs-filesystem==0.34.0
+- termcolor==2.4.0
+- threadpoolctl==3.2.0
+- tifffile==2023.9.26
+- tqdm==4.66.1
+- typing_extensions==4.8.0
+- tzdata==2023.3
+- urllib3==2.0.7
+- Werkzeug==3.0.1
+- wrapt==1.14.1
+
+Environment setup completed successfully
+
+Starting Task Execution:
+
+2023-12-13 18:05:47.733660: E tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:9342] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2023-12-13 18:05:47.733739: E tensorflow/compiler/xla/stream_executor/cuda/cuda_fft.cc:609] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2023-12-13 18:05:47.733760: E tensorflow/compiler/xla/stream_executor/cuda/cuda_blas.cc:1518] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2023-12-13 18:05:47.740188: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-12-13 18:05:48.449468: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+
+1702490753604 cerebriu-research-bm48gpu-instance-2:gpu0 DEBUG 2023-12-13 18:05:49 WARNING  InsecureRequestWarning: Certificate verification is disabled! Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+ClearML results page: https://130.61.76.150:8080/projects/6b7c41ee8a4040f2ab35e09b02bbccde/experiments/7974ae1258344c3d9357c22841dd6127/output/log
+2023-12-13 18:05:49 INFO     Running task 7974ae1258344c3d9357c22841dd6127 remotely.
+2023-12-13 18:05:49 INFO     Fetching config 'args' from ClearML Task '7974ae1258344c3d9357c22841dd6127'.
+2023-12-13 18:05:49 INFO     Read config 'args' from ClearML task.
+2023-12-13 18:05:49 INFO     Fetching config 'evaluation' from ClearML Task '7974ae1258344c3d9357c22841dd6127'.
+2023-12-13 18:05:49 INFO     Read config 'evaluation' from ClearML task.
+2023-12-13 18:05:49 INFO     Fetching config 'experiment' from ClearML Task '7974ae1258344c3d9357c22841dd6127'.
+2023-12-13 18:05:49 INFO     Read config 'experiment' from ClearML task.
+2023-12-13 18:05:49 INFO     Running with ClearML mode: 'remote'
+2023-12-13 18:05:49 INFO     Parsed arguments: {'add_evaluations_to_model': False, 'clearml_mode': 'remote', 'command': 'evaluate', 'dataset_id': None, 'evaluations': ['segmentation', 'accumulated_segmentation', 'classification', 'accumulated_classification', 'counts', 'accumulated_counts'], 'local_run_dir': None, 'log_level': 'INFO', 'model_id': None, 'prediction_task_id': '9f673de98bb245678c294f2b56c4a545', 'project_folder': '.', 'project_name': 'CMB/3Dunet', 'seed': 42, 'splits': ['valid'], 'splits_file': 'splits.json', 'study_folders_pattern': '*', 'tags': ['valid-split', 'patch64', 'valdo1'], 'task_description': None, 'task_name': 'valdo1-3Dunet-eval', 'tf_min_log_level': '2', 'worker_queue_name': 'single-gpu'}
+2023-12-13 18:05:49 INFO     Setting global seed to 42
+2023-12-13 18:05:49 INFO     Importing module 'crbr.commands.evaluate'
+2023-12-13 18:05:50 INFO     Running command: evaluate in module crbr.commands.evaluate (task=7974ae1258344c3d9357c22841dd6127) from dir /tmp/tmpdhoe70xv/CMB/3Dunet/valdo1-3Dunet-eval
+2023-12-13 18:05:50 INFO     Setting task 7974ae1258344c3d9357c22841dd6127 type to 'testing'
+2023-12-13 18:05:50 INFO     Prediction task 9f673de98bb245678c294f2b56c4a545 has 1 prediction artefact(s).
+2023-12-13 18:05:50 INFO     Found prediction artefact with model_id c505d438f5f54f0ca7737d5ac4437809 and dataset_id 72633e8f6195423eae5d04037a5728f9. Running evaluation now.
+2023-12-13 18:05:51 INFO     Stotred local copy of artefact 'prediction-c505d438f5f54f0ca7737d5ac4437809-72633e8f6195423eae5d04037a5728f9-valid' in folder '/4_datadrive/clearml/cache/storage_manager/global/6e81774f06f3d207d7b7a47a74a477bf.valdo1-3Dunet-pred_artifacts_archive_prediction-c505d438f5f54f0ca7737d5ac4437809-72633e8f6195423eae5d04037a5728f9-valid'
+2023-12-13 18:05:51,022 - clearml - INFO - Dataset.get() did not specify alias. Dataset information will not be automatically logged in ClearML Server.
+2023-12-13 18:05:51 INFO     Dataset not locally available. Attempting to automatically download.
+2023-12-13 18:05:51 INFO     Fetching dataset: [ID=None, name='VALDO', version=1] from ClearML
+2023-12-13 18:05:51 INFO     Dataset has tags: ['T2S-space', 'isotropic=1', 'nifty', 'processed']
+2023-12-13 18:05:51 INFO     Dataset is not zipped. Leaving in as-is in default ClearML cache.
+2023-12-13 18:05:51 INFO     Dataset downloaded to /4_datadrive/clearml/cache/storage_manager/datasets/ds_72633e8f6195423eae5d04037a5728f9
+2023-12-13 18:05:51 INFO     Found 72 study folders.
+2023-12-13 18:05:51 INFO     Loading splits from file /4_datadrive/clearml/cache/storage_manager/datasets/ds_72633e8f6195423eae5d04037a5728f9/splits.json
+2023-12-13 18:05:51 INFO     Skipping split train.
+2023-12-13 18:05:51 INFO     Creating dataset for split valid with 22 studies.
+2023-12-13 18:05:51 INFO     Loaded dataset split valid with 22 samples.
+2023-12-13 18:05:51 INFO     Loaded dataset with 1 splits: {'valid': MRIStudyDataset(len(mri_study_configs)=22, load_sequence_spec=SequenceSpec(T2S), metadata=False, transform=False)}
+2023-12-13 18:05:51 INFO     Initialized running evaluation for split 'valid' (dataset MRIStudyDataset(len(mri_study_configs)=22, load_sequence_spec=SequenceSpec(T2S), metadata=False, transform=False))
+2023-12-13 18:05:51 INFO     Found 22 prediction files for 22 studies.
+2023-12-13 18:05:51 INFO     Getting segmentation to classification converter pixel_count with kwargs {'n_classes': 2, 'conversion_map': None}
+2023-12-13 18:05:51 INFO     Using pixel thresholds: {1: 1}
+2023-12-13 18:05:51 INFO     Using segmentation - classification converter: PixelCountSegmentationToClassificationConverter({'conversion_map': None, 'num_pixels_thresholds': {1: 1}, 'negative_class_index': 0, 'max_class_in_map': 1, 'n_classes': 2})
+2023-12-13 18:05:51 INFO     Evaluating 22 predictions with 6 evaluation(s):
+                             - SegmentationEvaluation({'zero_division': 'nan', 'ignore_classes_in_avg': (0,)})
+                             - AccumulatedSegmentationEvaluation({'zero_division': 'nan', 'ignore_classes_in_avg': (0,)})
+                             - ClassificationEvaluation({})
+                             - AcccumulatedClassificationEvaluation({})
+                             - CountsEvaluation({'label_structure': array([[[ True,  True,  True],
+                                     [ True,  True,  True],
+                                     [ True,  True,  True]],
+                             
+                                    [[ True,  True,  True],
+                                     [ True,  True,  True],
+                                     [ True,  True,  True]],
+                             
+                                    [[ True,  True,  True],
+                                     [ True,  True,  True],
+                                     [ True,  True,  True]]]), 'min_overlap_voxels': 1})
+                             - AccumulatedCountsEvaluation({'label_structure': array([[[ True,  True,  True],
+                                     [ True,  True,  True],
+                                     [ True,  True,  True]],
+                             
+                                    [[ True,  True,  True],
+                                     [ True,  True,  True],
+                                     [ True,  True,  True]],
+                             
+                                    [[ True,  True,  True],
+                                     [ True,  True,  True],
+                                     [ True,  True,  True]]]), 'min_overlap_voxels': 1})
+2023-12-13 18:05:51 INFO     [1/22] Evaluating study sub-101.
+2023-12-13 18:05:53 INFO     Study evaluation:
+                             {'classification': {0:  'TN',
+                                                 1:  'TP'},
+                              'counts': {'predicted_counts': [20],
+                                         'predicted_overlapping_counts': [3],
+                                         'true_counts': [14]},
+                              'segmentation': {'f1_0': 0.9999739886598024,
+                                               'f1_1': 0.13991769547325103,
+                                               'f1_avg': 0.13991769547325103,
+                                               'precision_0': 0.9999639080736146,
+                                               'precision_1': 0.20987654320987653,
+                                               'precision_avg': 0.20987654320987653,
+                                               'recall_0': 0.999984069449236,
+                                               'recall_1': 0.10493827160493827,
+                                               'recall_avg': 0.10493827160493827,
+                                               'specificity_0': 0.10493827160493827,
+                                               'specificity_1': 0.999984069449236,
+                                               'specificity_avg': 0.999984069449236}}
+
+1702490758634 cerebriu-research-bm48gpu-instance-2:gpu0 DEBUG 2023-12-13 18:05:53 INFO     [2/22] Evaluating study sub-104.
+2023-12-13 18:05:54 INFO     Study evaluation:
+                             {'classification': {0:  'FN',
+                                                 1:  'FP'},
+                              'counts': {'predicted_counts': [12],
+                                         'predicted_overlapping_counts': [0],
+                                         'true_counts': [0]},
+                              'segmentation': {'f1_0': 0.9999918804862625,
+                                               'f1_1': 0.0,
+                                               'f1_avg': 0.0,
+                                               'precision_0': 1.0,
+                                               'precision_1': 0.0,
+                                               'precision_avg': 0.0,
+                                               'recall_0': 0.999983761104377,
+                                               'recall_1': 'nan',
+                                               'recall_avg': 'nan',
+                                               'specificity_0': 'nan',
+                                               'specificity_1': 0.999983761104377,
+                                               'specificity_avg': 0.999983761104377}}
+2023-12-13 18:05:54 INFO     [3/22] Evaluating study sub-107.
+2023-12-13 18:05:55 INFO     Study evaluation:
+                             {'classification': {0:  'TN',
+                                                 1:  'TP'},
+                              'counts': {'predicted_counts': [7],
+                                         'predicted_overlapping_counts': [1],
+                                         'true_counts': [2]},
+                              'segmentation': {'f1_0': 0.999992451629375,
+                                               'f1_1': 0.07272727272727272,
+                                               'f1_avg': 0.07272727272727272,
+                                               'precision_0': 0.999994079699675,
+                                               'precision_1': 0.06060606060606061,
+                                               'precision_avg': 0.06060606060606061,
+                                               'recall_0': 0.9999908235643763,
+                                               'recall_1': 0.09090909090909091,
+                                               'recall_avg': 0.09090909090909091,
+                                               'specificity_0': 0.09090909090909091,
+                                               'specificity_1': 0.9999908235643763,
+                                               'specificity_avg': 0.9999908235643763}}
+2023-12-13 18:05:56 INFO     [4/22] Evaluating study sub-109.
+2023-12-13 18:05:57 INFO     Study evaluation:
+                             {'classification': {0:  'FN',
+                                                 1:  'FP'},
+                              'counts': {'predicted_counts': [2],
+                                         'predicted_overlapping_counts': [0],
+                                         'true_counts': [0]},
+                              'segmentation': {'f1_0': 0.9999993423001933,
+                                               'f1_1': 0.0,
+                                               'f1_avg': 0.0,
+                                               'precision_0': 1.0,
+                                               'precision_1': 0.0,
+                                               'precision_avg': 0.0,
+                                               'recall_0': 0.9999986846012516,
+                                               'recall_1': 'nan',
+                                               'recall_avg': 'nan',
+                                               'specificity_0': 'nan',
+                                               'specificity_1': 0.9999986846012516,
+                                               'specificity_avg': 0.9999986846012516}}
+2023-12-13 18:05:57 INFO     [5/22] Evaluating study sub-111.
+2023-12-13 18:05:58 INFO     Study evaluation:
+                             {'classification': {0:  'TN',
+                                                 1:  'TP'},
+                              'counts': {'predicted_counts': [8],
+                                         'predicted_overlapping_counts': [2],
+                                         'true_counts': [3]},
+                              'segmentation': {'f1_0': 0.9999804351914255,
+                                               'f1_1': 0.5914634146341463,
+                                               'f1_avg': 0.5914634146341463,
+                                               'precision_0': 0.9999845232971101,
+                                               'precision_1': 0.5449438202247191,
+                                               'precision_avg': 0.5449438202247191,
+                                               'recall_0': 0.9999763471191667,
+                                               'recall_1': 0.6466666666666666,
+                                               'recall_avg': 0.6466666666666666,
+                                               'specificity_0': 0.6466666666666666,
+                                               'specificity_1': 0.9999763471191667,
+                                               'specificity_avg': 0.9999763471191667}}
+
+1702490763643 cerebriu-research-bm48gpu-instance-2:gpu0 DEBUG 2023-12-13 18:05:58 INFO     [6/22] Evaluating study sub-204.
+2023-12-13 18:05:59 INFO     Study evaluation:
+                             {'classification': {0:  'FN',
+                                                 1:  'FP'},
+                              'counts': {'predicted_counts': [2],
+                                         'predicted_overlapping_counts': [0],
+                                         'true_counts': [0]},
+                              'segmentation': {'f1_0': 0.999999703660943,
+                                               'f1_1': 0.0,
+                                               'f1_avg': 0.0,
+                                               'precision_0': 1.0,
+                                               'precision_1': 0.0,
+                                               'precision_avg': 0.0,
+                                               'recall_0': 0.9999994073220618,
+                                               'recall_1': 'nan',
+                                               'recall_avg': 'nan',
+                                               'specificity_0': 'nan',
+                                               'specificity_1': 0.9999994073220618,
+                                               'specificity_avg': 0.9999994073220618}}
+2023-12-13 18:06:00 INFO     [7/22] Evaluating study sub-207.
+2023-12-13 18:06:01 INFO     Study evaluation:
+                             {'classification': {0:  'TN',
+                                                 1:  'TP'},
+                              'counts': {'predicted_counts': [12],
+                                         'predicted_overlapping_counts': [8],
+                                         'true_counts': [9]},
+                              'segmentation': {'f1_0': 0.9999934257321396,
+                                               'f1_1': 0.6533333333333333,
+                                               'f1_avg': 0.6533333333333333,
+                                               'precision_0': 0.9999977242821122,
+                                               'precision_1': 0.532608695652174,
+                                               'precision_avg': 0.532608695652174,
+                                               'recall_0': 0.9999891272191219,
+                                               'recall_1': 0.8448275862068966,
+                                               'recall_avg': 0.8448275862068966,
+                                               'specificity_0': 0.8448275862068966,
+                                               'specificity_1': 0.9999891272191219,
+                                               'specificity_avg': 0.9999891272191219}}
+2023-12-13 18:06:01 INFO     [8/22] Evaluating study sub-208.
+2023-12-13 18:06:02 INFO     Study evaluation:
+                             {'classification': {0:  'TN',
+                                                 1:  'TP'},
+                              'counts': {'predicted_counts': [6],
+                                         'predicted_overlapping_counts': [1],
+                                         'true_counts': [1]},
+                              'segmentation': {'f1_0': 0.9999939192369264,
+                                               'f1_1': 0.26229508196721313,
+                                               'f1_avg': 0.26229508196721313,
+                                               'precision_0': 0.9999991892273175,
+                                               'precision_1': 0.16,
+                                               'precision_avg': 0.16,
+                                               'recall_0': 0.9999886493020808,
+                                               'recall_1': 0.7272727272727273,
+                                               'recall_avg': 0.7272727272727273,
+                                               'specificity_0': 0.7272727272727273,
+                                               'specificity_1': 0.9999886493020808,
+                                               'specificity_avg': 0.9999886493020808}}
+2023-12-13 18:06:02 INFO     [9/22] Evaluating study sub-214.
+
+1702490768666 cerebriu-research-bm48gpu-instance-2:gpu0 DEBUG 2023-12-13 18:06:04 INFO     Study evaluation:
+                             {'classification': {0:  'FN',
+                                                 1:  'FP'},
+                              'counts': {'predicted_counts': [10],
+                                         'predicted_overlapping_counts': [0],
+                                         'true_counts': [0]},
+                              'segmentation': {'f1_0': 0.9999961953316719,
+                                               'f1_1': 0.0,
+                                               'f1_avg': 0.0,
+                                               'precision_0': 1.0,
+                                               'precision_1': 0.0,
+                                               'precision_avg': 0.0,
+                                               'recall_0': 0.9999923906922948,
+                                               'recall_1': 'nan',
+                                               'recall_avg': 'nan',
+                                               'specificity_0': 'nan',
+                                               'specificity_1': 0.9999923906922948,
+                                               'specificity_avg': 0.9999923906922948}}
+2023-12-13 18:06:04 INFO     [10/22] Evaluating study sub-215.
+2023-12-13 18:06:05 INFO     Study evaluation:
+                             {'classification': {0:  'TN',
+                                                 1:  'TP'},
+                              'counts': {'predicted_counts': [4],
+                                         'predicted_overlapping_counts': [0],
+                                         'true_counts': [1]},
+                              'segmentation': {'f1_0': 0.9999975792727651,
+                                               'f1_1': 0.0,
+                                               'f1_avg': 0.0,
+                                               'precision_0': 0.9999990317076997,
+                                               'precision_1': 0.0,
+                                               'precision_avg': 0.0,
+                                               'recall_0': 0.9999961268420497,
+                                               'recall_1': 0.0,
+                                               'recall_avg': 0.0,
+                                               'specificity_0': 0.0,
+                                               'specificity_1': 0.9999961268420497,
+                                               'specificity_avg': 0.9999961268420497}}
+2023-12-13 18:06:05 INFO     [11/22] Evaluating study sub-217.
+2023-12-13 18:06:06 INFO     Study evaluation:
+                             {'classification': {0:  'TN',
+                                                 1:  'TP'},
+                              'counts': {'predicted_counts': [1],
+                                         'predicted_overlapping_counts': [0],
+                                         'true_counts': [1]},
+                              'segmentation': {'f1_0': 0.9999978337701656,
+                                               'f1_1': 0.0,
+                                               'f1_avg': 0.0,
+                                               'precision_0': 0.9999959563785673,
+                                               'precision_1': 0.0,
+                                               'precision_avg': 0.0,
+                                               'recall_0': 0.9999997111688131,
+                                               'recall_1': 0.0,
+                                               'recall_avg': 0.0,
+                                               'specificity_0': 0.0,
+                                               'specificity_1': 0.9999997111688131,
+                                               'specificity_avg': 0.9999997111688131}}
+2023-12-13 18:06:07 INFO     [12/22] Evaluating study sub-221.
+
+1702490773710 cerebriu-research-bm48gpu-instance-2:gpu0 DEBUG 2023-12-13 18:06:08 INFO     Study evaluation:
+                             {'classification': {0:  'TN',
+                                                 1:  'TP'},
+                              'counts': {'predicted_counts': [32],
+                                         'predicted_overlapping_counts': [10],
+                                         'true_counts': [11]},
+                              'segmentation': {'f1_0': 0.9999823876889463,
+                                               'f1_1': 0.4016393442622951,
+                                               'f1_avg': 0.4016393442622951,
+                                               'precision_0': 0.9999946921149195,
+                                               'precision_1': 0.2832369942196532,
+                                               'precision_avg': 0.2832369942196532,
+                                               'recall_0': 0.9999700835657688,
+                                               'recall_1': 0.6901408450704225,
+                                               'recall_avg': 0.6901408450704225,
+                                               'specificity_0': 0.6901408450704225,
+                                               'specificity_1': 0.9999700835657688,
+                                               'specificity_avg': 0.9999700835657688}}
+2023-12-13 18:06:09 INFO     [13/22] Evaluating study sub-222.
+2023-12-13 18:06:10 INFO     Study evaluation:
+                             {'classification': {0:  'TN',
+                                                 1:  'TP'},
+                              'counts': {'predicted_counts': [20],
+                                         'predicted_overlapping_counts': [6],
+                                         'true_counts': [11]},
+                              'segmentation': {'f1_0': 0.9999819478696805,
+                                               'f1_1': 0.2995169082125604,
+                                               'f1_avg': 0.2995169082125604,
+                                               'precision_0': 0.9999880481718434,
+                                               'precision_1': 0.2421875,
+                                               'precision_avg': 0.2421875,
+                                               'recall_0': 0.9999758476419455,
+                                               'recall_1': 0.3924050632911392,
+                                               'recall_avg': 0.3924050632911392,
+                                               'specificity_0': 0.3924050632911392,
+                                               'specificity_1': 0.9999758476419455,
+                                               'specificity_avg': 0.9999758476419455}}
+2023-12-13 18:06:10 INFO     [14/22] Evaluating study sub-224.
+2023-12-13 18:06:11 INFO     Study evaluation:
+                             {'classification': {0:  'FN',
+                                                 1:  'FP'},
+                              'counts': {'predicted_counts': [6],
+                                         'predicted_overlapping_counts': [0],
+                                         'true_counts': [0]},
+                              'segmentation': {'f1_0': 0.9999970948936392,
+                                               'f1_1': 0.0,
+                                               'f1_avg': 0.0,
+                                               'precision_0': 1.0,
+                                               'precision_1': 0.0,
+                                               'precision_avg': 0.0,
+                                               'recall_0': 0.9999941898041577,
+                                               'recall_1': 'nan',
+                                               'recall_avg': 'nan',
+                                               'specificity_0': 'nan',
+                                               'specificity_1': 0.9999941898041577,
+                                               'specificity_avg': 0.9999941898041577}}
+2023-12-13 18:06:11 INFO     [15/22] Evaluating study sub-226.
+2023-12-13 18:06:12 INFO     Study evaluation:
+                             {'classification': {0:  'FN',
+                                                 1:  'FP'},
+                              'counts': {'predicted_counts': [2],
+                                         'predicted_overlapping_counts': [0],
+                                         'true_counts': [0]},
+                              'segmentation': {'f1_0': 0.9999991272587634,
+                                               'f1_1': 0.0,
+                                               'f1_avg': 0.0,
+                                               'precision_0': 1.0,
+                                               'precision_1': 0.0,
+                                               'precision_avg': 0.0,
+                                               'recall_0': 0.9999982545190502,
+                                               'recall_1': 'nan',
+                                               'recall_avg': 'nan',
+                                               'specificity_0': 'nan',
+                                               'specificity_1': 0.9999982545190502,
+                                               'specificity_avg': 0.9999982545190502}}
+2023-12-13 18:06:13 INFO     [16/22] Evaluating study sub-227.
+
+1702490778715 cerebriu-research-bm48gpu-instance-2:gpu0 DEBUG 2023-12-13 18:06:14 INFO     Study evaluation:
+                             {'classification': {0:  'FN',
+                                                 1:  'FP'},
+                              'counts': {'predicted_counts': [1],
+                                         'predicted_overlapping_counts': [0],
+                                         'true_counts': [0]},
+                              'segmentation': {'f1_0': 0.9999998564796908,
+                                               'f1_1': 0.0,
+                                               'f1_avg': 0.0,
+                                               'precision_0': 1.0,
+                                               'precision_1': 0.0,
+                                               'precision_avg': 0.0,
+                                               'recall_0': 0.9999997129594228,
+                                               'recall_1': 'nan',
+                                               'recall_avg': 'nan',
+                                               'specificity_0': 'nan',
+                                               'specificity_1': 0.9999997129594228,
+                                               'specificity_avg': 0.9999997129594228}}
+2023-12-13 18:06:14 INFO     [17/22] Evaluating study sub-301.
+2023-12-13 18:06:15 INFO     Study evaluation:
+                             {'classification': {0:  'TN',
+                                                 1:  'TP'},
+                              'counts': {'predicted_counts': [3],
+                                         'predicted_overlapping_counts': [1],
+                                         'true_counts': [1]},
+                              'segmentation': {'f1_0': 0.9999967462313806,
+                                               'f1_1': 0.17647058823529413,
+                                               'f1_avg': 0.17647058823529413,
+                                               'precision_0': 0.9999995351746152,
+                                               'precision_1': 0.10344827586206896,
+                                               'precision_avg': 0.10344827586206896,
+                                               'recall_0': 0.9999939573037024,
+                                               'recall_1': 0.6,
+                                               'recall_avg': 0.6,
+                                               'specificity_0': 0.6,
+                                               'specificity_1': 0.9999939573037024,
+                                               'specificity_avg': 0.9999939573037024}}
+2023-12-13 18:06:16 INFO     [18/22] Evaluating study sub-302.
+2023-12-13 18:06:17 INFO     Study evaluation:
+                             {'classification': {0:  'TN',
+                                                 1:  'TP'},
+                              'counts': {'predicted_counts': [6],
+                                         'predicted_overlapping_counts': [1],
+                                         'true_counts': [1]},
+                              'segmentation': {'f1_0': 0.9999902418121379,
+                                               'f1_1': 0.4888888888888889,
+                                               'f1_avg': 0.4888888888888889,
+                                               'precision_0': 0.9999878376501661,
+                                               'precision_1': 0.559322033898305,
+                                               'precision_avg': 0.559322033898305,
+                                               'recall_0': 0.9999926459856698,
+                                               'recall_1': 0.4342105263157895,
+                                               'recall_avg': 0.4342105263157895,
+                                               'specificity_0': 0.4342105263157895,
+                                               'specificity_1': 0.9999926459856698,
+                                               'specificity_avg': 0.9999926459856698}}
+2023-12-13 18:06:17 INFO     [19/22] Evaluating study sub-309.
+
+1702490783738 cerebriu-research-bm48gpu-instance-2:gpu0 DEBUG 2023-12-13 18:06:18 INFO     Study evaluation:
+                             {'classification': {0:  'TN',
+                                                 1:  'TP'},
+                              'counts': {'predicted_counts': [2],
+                                         'predicted_overlapping_counts': [0],
+                                         'true_counts': [1]},
+                              'segmentation': {'f1_0': 0.9999890105423324,
+                                               'f1_1': 0.0,
+                                               'f1_avg': 0.0,
+                                               'precision_0': 0.9999981463396033,
+                                               'precision_1': 0.0,
+                                               'precision_avg': 0.0,
+                                               'recall_0': 0.9999798749119858,
+                                               'recall_1': 0.0,
+                                               'recall_avg': 0.0,
+                                               'specificity_0': 0.0,
+                                               'specificity_1': 0.9999798749119858,
+                                               'specificity_avg': 0.9999798749119858}}
+2023-12-13 18:06:19 INFO     [20/22] Evaluating study sub-314.
+2023-12-13 18:06:20 INFO     Study evaluation:
+                             {'classification': {0:  'TN',
+                                                 1:  'TP'},
+                              'counts': {'predicted_counts': [3],
+                                         'predicted_overlapping_counts': [1],
+                                         'true_counts': [1]},
+                              'segmentation': {'f1_0': 0.9999985303884801,
+                                               'f1_1': 0.2857142857142857,
+                                               'f1_avg': 0.2857142857142857,
+                                               'precision_0': 0.9999992162066518,
+                                               'precision_1': 0.21428571428571427,
+                                               'precision_avg': 0.21428571428571427,
+                                               'recall_0': 0.999997844571249,
+                                               'recall_1': 0.42857142857142855,
+                                               'recall_avg': 0.42857142857142855,
+                                               'specificity_0': 0.42857142857142855,
+                                               'specificity_1': 0.999997844571249,
+                                               'specificity_avg': 0.999997844571249}}
+2023-12-13 18:06:21 INFO     [21/22] Evaluating study sub-317.
+2023-12-13 18:06:22 INFO     Study evaluation:
+                             {'classification': {0:  'TN',
+                                                 1:  'TP'},
+                              'counts': {'predicted_counts': [3],
+                                         'predicted_overlapping_counts': [1],
+                                         'true_counts': [1]},
+                              'segmentation': {'f1_0': 0.999998168956817,
+                                               'f1_1': 0.37037037037037035,
+                                               'f1_avg': 0.37037037037037035,
+                                               'precision_0': 0.9999997845828069,
+                                               'precision_1': 0.23809523809523808,
+                                               'precision_avg': 0.23809523809523808,
+                                               'recall_0': 0.9999965533360475,
+                                               'recall_1': 0.8333333333333334,
+                                               'recall_avg': 0.8333333333333334,
+                                               'specificity_0': 0.8333333333333334,
+                                               'specificity_1': 0.9999965533360475,
+                                               'specificity_avg': 0.9999965533360475}}
+2023-12-13 18:06:23 INFO     [22/22] Evaluating study sub-326.
+
+1702490788747 cerebriu-research-bm48gpu-instance-2:gpu0 DEBUG 2023-12-13 18:06:24 INFO     Study evaluation:
+                             {'classification': {0:  'TN',
+                                                 1:  'TP'},
+                              'counts': {'predicted_counts': [4],
+                                         'predicted_overlapping_counts': [1],
+                                         'true_counts': [1]},
+                              'segmentation': {'f1_0': 0.9999965111468857,
+                                               'f1_1': 0.3,
+                                               'f1_avg': 0.3,
+                                               'precision_0': 0.9999982555703998,
+                                               'precision_1': 0.2222222222222222,
+                                               'precision_avg': 0.2222222222222222,
+                                               'recall_0': 0.9999947667294576,
+                                               'recall_1': 0.46153846153846156,
+                                               'recall_avg': 0.46153846153846156,
+                                               'specificity_0': 0.46153846153846156,
+                                               'specificity_1': 0.9999947667294576,
+                                               'specificity_avg': 0.9999947667294576}}
+Traceback (most recent call last):
+  File "/4_datadrive/clearml/venvs-builds.1/3.11/task_repository/cerebriu-research-mlops.git/crbr/commands/main.py", line 222, in <module
+    main()
+  File "/4_datadrive/clearml/venvs-builds.1/3.11/task_repository/cerebriu-research-mlops.git/crbr/commands/main.py", line 218, in main
+    return mod.main(task=task, config=config, local_run_dir=local_run_dir)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/4_datadrive/clearml/venvs-builds.1/3.11/task_repository/cerebriu-research-mlops.git/crbr/utils/config_parsers.py", line 543, in wrapper
+    return func(task, config, local_run_dir, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/4_datadrive/clearml/venvs-builds.1/3.11/task_repository/cerebriu-research-mlops.git/crbr/utils/clearml_utils.py", line 477, in wrapper
+    return func(task, config, local_run_dir, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/4_datadrive/clearml/venvs-builds.1/3.11/task_repository/cerebriu-research-mlops.git/crbr/commands/evaluate.py", line 453, in main
+    evaluate_prediction_artefact(
+  File "/4_datadrive/clearml/venvs-builds.1/3.11/task_repository/cerebriu-research-mlops.git/crbr/commands/evaluate.py", line 352, in evaluate_prediction_artefact
+    evaluation_metrics = run_all_evaluations_on_dataset(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/4_datadrive/clearml/venvs-builds.1/3.11/task_repository/cerebriu-research-mlops.git/crbr/commands/evaluate.py", line 229, in run_all_evaluations_on_dataset
+    add_accumulated_metrics(evaluation_metrics, evaluations, task)
+  File "/4_datadrive/clearml/venvs-builds.1/3.11/task_repository/cerebriu-research-mlops.git/crbr/commands/evaluate.py", line 255, in add_accumulated_metrics
+    evaluation.reset_accumulator()
+  File "/4_datadrive/clearml/venvs-builds.1/3.11/task_repository/cerebriu-research-mlops.git/crbr/evaluation/evaluations/base_evaluation.py", line 191, in reset_accumulator
+    raise NotImplementedError("Must be implemented in subclass")
+NotImplementedError: Must be implemented in subclass
+
+1702490793734 cerebriu-research-bm48gpu-instance-2:gpu0 DEBUG Process failed, exit code 1

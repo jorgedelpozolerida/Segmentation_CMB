@@ -1,0 +1,4 @@
+1. Boundary Intersection over Union (Boundary IoU): metrics-reloaded.dkfz.de/metric?id=boundary_intersection_over_union_local
+2. Greedy (by Score) Matching: metrics-reloaded.dkfz.de/metric?id=greedy_by_score_matching
+3. Average Precision (AP): metrics-reloaded.dkfz.de/metric?id=average_precision
+4. Fᵦ Score: metrics-reloaded.dkfz.de/metric?id=f_beta_overlap
