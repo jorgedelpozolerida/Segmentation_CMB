@@ -20,6 +20,9 @@ segmentation to be used in future work.
 ### Creation of New Dataset for CMB segmentation
 A total of 70 cases were selected containing diverse pathologies and coming from different hospital locations, with equally diverse scanner acquisition parameters. This project handled the following things: annotation protocol tuning, annotation framework setup, custom algorithm to generate synthetic masks from weak annotations. 
 
+Taxonomy used for annotation in RedBrick AI can be found here: [taxonomy_CMB.json](data/taxonomy_CMB.json) 
+
+
 [<img src="img/table1.png" width="250"/>](img/table1.png)
 
 ![](img/table2.png)
