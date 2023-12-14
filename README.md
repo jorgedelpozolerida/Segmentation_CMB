@@ -28,6 +28,9 @@ A total of 70 cases were selected containing diverse pathologies and coming from
 ### 3D U-Net for CMBs segmentation   
 
 A 3D-Unet was trained in different setups to learn the task of segmenting and detecting CMBs, achieving satisfactory results given the complexity of the task and the state-of-the-art. As with many other approaches in literature, FPs were the main problem. Because of its well-known architecture and the use of a publicly available dataset, this results can easily be compared and reproduced by other researchers who wat to approach the task.
+
+Please find a link to best performing model [here](https://drive.google.com/file/d/1umbCrlPZDpJcdJxVQXsXap9nWH_F9pQG/view?usp=sharing)
+
 ![](img/table5.png)
 ![](img/figure8.png)
 
