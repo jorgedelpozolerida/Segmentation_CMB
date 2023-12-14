@@ -166,3 +166,5 @@ testing/*
 experiments/_*
 Machine Learning for Cerebrovascular Disorders.pdf
 Metrics reloaded: Recommendations for image analysis validation.pdf
+papers/*
+meetings/*
