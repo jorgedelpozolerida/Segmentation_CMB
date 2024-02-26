@@ -1,8 +1,6 @@
 # Segmentation_CMB
-NOTE: THIS REPOSITORY WILL BE CHANGED SOON TO FIT NEW CONTENT
 
-
-Repository containing results of my Research Project done in collaboration with [CEREBRIU](https://cerebriu.com/) company as part of my Msc in Data Science at [IT University of Copenhagen](https://en.itu.dk/). 
+Repository containing results of my 15 ECTS Research Project done in collaboration with [CEREBRIU](https://cerebriu.com/) company as part of my Msc in Data Science at [IT University of Copenhagen](https://en.itu.dk/). 
 
 Please read full report in [Automated Segmentation of CMB](JorgedelPozoLerida_ResearchProject_AutomatedSegmentationofCMB.pdf)
 
