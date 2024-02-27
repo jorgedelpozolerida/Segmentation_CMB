@@ -1,6 +1,6 @@
 # Segmentation_CMB
 
-Repository containing results of my 7.5 ECTS Research Project done in collaboration with [CEREBRIU](https://cerebriu.com/) company as part of my Msc in Data Science at [IT University of Copenhagen](https://en.itu.dk/). These are preliminary results and the project is continued during my MSc thesis in the following repo: [MicrobleedNet]([https://cerebriu.com/](https://github.com/jorgedelpozolerida/MicrobleedNet)
+Repository containing results of my 7.5 ECTS Research Project done in collaboration with [CEREBRIU](https://cerebriu.com/) company as part of my Msc in Data Science at [IT University of Copenhagen](https://en.itu.dk/). These are preliminary results and the project is continued during my MSc thesis in the following repo: [MicrobleedNet](https://github.com/jorgedelpozolerida/MicrobleedNet)
 
 Please read full report in [Automated Segmentation of CMB](JorgedelPozoLerida_ResearchProject_AutomatedSegmentationofCMB.pdf)
 
